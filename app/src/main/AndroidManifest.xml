@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Getaran tombol. XOS pada Note 40 Pro mengabaikan umpan balik haptik dari aplikasi
+         biasa, jadi satu-satunya jalan adalah layanan getar. VIBRATE tergolong izin normal:
+         diberikan otomatis saat pasang, tanpa dialog, dan tidak menyentuh data apa pun.
+         Revisi PRD §7.1 atas persetujuan pemilik produk, 19 September 2026. -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!-- PRD §1 & §7.1: selain VIBRATE, aplikasi tidak mendeklarasikan izin apa pun.
+         androidx.core menyuntikkan izin signature DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION;
+         tidak diperlukan pada minSdk 34, jadi dibuang agar manifest benar-benar kosong izin. -->
+    <uses-permission
+        android:name="${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+        tools:node="remove" />
+    <permission
+        android:name="${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+        tools:node="remove" />
+
+    <application
+        android:label="@string/app_name"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:allowBackup="false"
+        android:theme="@android:style/Theme.Material.NoActionBar">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

@@ -1,0 +1,120 @@
+# ============================================================================
+# STATUS: BELUM DIVERIFIKASI UNIT FISIK
+# Seluruh 64 kasus di bawah (target awal 50, ditambah karena contoh manual
+# ternyata lebih banyak) bersumber `manual` (contoh di User's Guide
+# fx-570ES PLUS/fx-991ES PLUS) atau `manual?` (rekonstruksi saya).
+# Tidak satu pun sudah dicek dengan kalkulator fisik. Mohon rekam ulang tiap
+# baris dengan unit fx-570ES PLUS, lalu ubah kolom terakhir menjadi `fisik`.
+# Format lengkap: docs/golden/README.md
+# ============================================================================
+# mode | setup | urutan tombol | tampilan ekspresi | tampilan hasil | sumber
+
+# --- Aritmetika dasar dan prioritas operator ---
+COMP | default | DIGIT_2 OP_ADD DIGIT_3 OP_MUL DIGIT_4 EXEC_EQ | 2+3×4 | 14 | manual?
+COMP | default | PAREN_OPEN DIGIT_2 OP_ADD DIGIT_3 PAREN_CLOSE OP_MUL DIGIT_4 EXEC_EQ | (2+3)×4 | 20 | manual?
+COMP | default | DIGIT_4 OP_MUL DIGIT_3 OP_ADD DIGIT_2 DOT DIGIT_5 EXEC_EQ | 4×3+2.5 | 14.5 | manual
+COMP | default | DIGIT_1 DIGIT_2 DIGIT_3 OP_ADD DIGIT_4 DIGIT_5 DIGIT_6 EXEC_EQ | 123+456 | 579 | manual
+COMP | default | DIGIT_3 OP_MUL DIGIT_4 EXEC_EQ | 3×4 | 12 | manual
+COMP | LineIO | DIGIT_3 OP_MUL DIGIT_4 EXEC_EQ OP_DIV DIGIT_3 DIGIT_0 EXEC_EQ | Ans÷30 | 0.4 | manual
+COMP | default | DIGIT_3 OP_MUL DIGIT_4 EXEC_EQ MEM_ANS OP_ADD DIGIT_1 EXEC_EQ | Ans+1 | 13 | manual?
+COMP | default | OP_NEG DIGIT_5 OP_ADD DIGIT_8 EXEC_EQ | -5+8 | 3 | manual?
+
+# --- Pecahan, pecahan campuran, S<=>D ---
+COMP | default | DIGIT_2 FRAC DIGIT_3 NAV_RIGHT OP_ADD DIGIT_1 FRAC DIGIT_2 EXEC_EQ | 2⌟3+1⌟2 | 7⌟6 | manual
+COMP | LineIO | DIGIT_2 FRAC DIGIT_3 OP_ADD DIGIT_1 FRAC DIGIT_2 EXEC_EQ | 2⌟3+1⌟2 | 7⌟6 | manual
+COMP | default | DIGIT_4 OP_SUB MOD_SHIFT FRAC_MIXED DIGIT_3 NAV_RIGHT DIGIT_1 NAV_RIGHT DIGIT_2 EXEC_EQ | 4-3⌟1⌟2 | 1⌟2 | manual
+COMP | LineIO | DIGIT_4 OP_SUB DIGIT_3 FRAC DIGIT_1 FRAC DIGIT_2 EXEC_EQ | 4-3⌟1⌟2 | 1⌟2 | manual
+COMP | default | DIGIT_1 OP_SUB DIGIT_4 FRAC DIGIT_5 EXEC_EQ | 1-4⌟5 | 1⌟5 | manual
+COMP | default | DIGIT_1 OP_SUB DIGIT_4 FRAC DIGIT_5 EXEC_EQ FMT_SD | 1-4⌟5 | 0.2 | manual
+COMP | default | DIGIT_2 FRAC DIGIT_3 EXEC_EQ FMT_SD | 2⌟3 | 0.6666666667 | manual?
+COMP | default | DIGIT_7 FRAC DIGIT_6 EXEC_EQ MOD_SHIFT FMT_ABC_DC | 7⌟6 | 1⌟1⌟6 | manual?
+COMP | default | DIGIT_3 POST_RECIP EXEC_EQ | 3^(-1) | 1⌟3 | manual?
+COMP | default | DIGIT_1 FRAC DIGIT_3 EXEC_EQ FMT_SD | 1⌟3 | 0.3333333333 | manual?
+
+# --- Persen ---
+COMP | default | DIGIT_1 DIGIT_5 DIGIT_0 OP_MUL DIGIT_2 DIGIT_0 MOD_SHIFT POST_PERCENT EXEC_EQ | 150×20% | 30 | manual
+COMP | default | DIGIT_6 DIGIT_6 DIGIT_0 OP_DIV DIGIT_8 DIGIT_8 DIGIT_0 MOD_SHIFT POST_PERCENT EXEC_EQ | 660÷880% | 75 | manual
+COMP | default | DIGIT_2 DIGIT_5 DIGIT_0 DIGIT_0 OP_ADD DIGIT_2 DIGIT_5 DIGIT_0 DIGIT_0 OP_MUL DIGIT_1 DIGIT_5 MOD_SHIFT POST_PERCENT EXEC_EQ | 2500+2500×15% | 2875 | manual
+COMP | default | DIGIT_3 DIGIT_5 DIGIT_0 DIGIT_0 OP_SUB DIGIT_3 DIGIT_5 DIGIT_0 DIGIT_0 OP_MUL DIGIT_2 DIGIT_5 MOD_SHIFT POST_PERCENT EXEC_EQ | 3500-3500×25% | 2625 | manual
+
+# --- Derajat, menit, detik ---
+COMP | default | DIGIT_2 POST_DMS DIGIT_2 DIGIT_0 POST_DMS DIGIT_3 DIGIT_0 POST_DMS OP_ADD DIGIT_0 POST_DMS DIGIT_3 DIGIT_9 POST_DMS DIGIT_3 DIGIT_0 POST_DMS EXEC_EQ | 2°20'30"+0°39'30" | 3°0'0" | manual
+COMP | default | DIGIT_2 POST_DMS DIGIT_1 DIGIT_5 POST_DMS DIGIT_1 DIGIT_8 POST_DMS EXEC_EQ | 2°15'18" | 2°15'18" | manual
+COMP | default | DIGIT_2 POST_DMS DIGIT_1 DIGIT_5 POST_DMS DIGIT_1 DIGIT_8 POST_DMS EXEC_EQ POST_DMS | 2°15'18" | 2.255 | manual
+
+# --- Pangkat, akar, bentuk eksak ---
+COMP | default | DIGIT_1 DOT DIGIT_2 OP_MUL DIGIT_1 DIGIT_0 OP_POW DIGIT_3 EXEC_EQ | 1.2×10^(3) | 1200 | manual
+COMP | default | PAREN_OPEN DIGIT_1 OP_ADD DIGIT_1 PAREN_CLOSE OP_POW DIGIT_2 OP_ADD DIGIT_2 EXEC_EQ | (1+1)^(2+2) | 16 | manual
+COMP | default | PAREN_OPEN DIGIT_5 POST_SQUARE PAREN_CLOSE MOD_SHIFT POST_CUBE EXEC_EQ | (5²)³ | 15625 | manual
+COMP | default | MOD_SHIFT OP_NROOT DIGIT_5 NAV_RIGHT DIGIT_3 DIGIT_2 EXEC_EQ | 5√(32) | 2 | manual
+COMP | LineIO | DIGIT_5 MOD_SHIFT OP_NROOT DIGIT_3 DIGIT_2 PAREN_CLOSE EXEC_EQ | 5√(32) | 2 | manual
+COMP | default | FN_SQRT DIGIT_2 NAV_RIGHT OP_MUL DIGIT_3 EXEC_EQ | √(2)×3 | 3√(2) | manual
+COMP | Fix3 | FN_SQRT DIGIT_2 NAV_RIGHT OP_MUL DIGIT_3 EXEC_EQ FMT_SD | √(2)×3 | 4.243 | manual
+COMP | default | FN_SQRT DIGIT_8 EXEC_EQ | √(8) | 2√(2) | manual?
+COMP | default | FN_SQRT DIGIT_2 NAV_RIGHT OP_MUL FN_SQRT DIGIT_3 EXEC_EQ | √(2)×√(3) | √(6) | manual?
+
+# Bentuk √ dua suku, manual hlm. 17 dan 18 (√ Form Calculation Range) serta hlm. 20 Contoh 2.
+# Koefisien di luar 1..99 atau radikan di atas 999 memaksa tampilan desimal, karena itu
+# 99√999 tidak ditulis 297√111.
+COMP | default | PAREN_OPEN FN_SQRT DIGIT_2 NAV_RIGHT OP_ADD DIGIT_2 PAREN_CLOSE OP_MUL FN_SQRT DIGIT_3 EXEC_EQ | (√(2)+2)×√(3) | √(6)+2√(3) | manual
+COMP | default | DIGIT_1 DIGIT_0 FN_SQRT DIGIT_2 NAV_RIGHT OP_ADD DIGIT_1 DIGIT_5 OP_MUL DIGIT_3 FN_SQRT DIGIT_3 EXEC_EQ | 10√(2)+15×3√(3) | 45√(3)+10√(2) | manual
+COMP | default | DIGIT_9 DIGIT_9 FN_SQRT DIGIT_9 DIGIT_9 DIGIT_9 EXEC_EQ | 99√(999) | 3129.089165 | manual
+COMP | default | DIGIT_2 OP_POW DIGIT_1 DIGIT_0 EXEC_EQ | 2^(10) | 1024 | manual?
+COMP | default | MOD_SHIFT FN_CBRT DIGIT_2 DIGIT_7 EXEC_EQ | ³√(27) | 3 | manual?
+
+# --- Logaritma dan eksponen ---
+COMP | default | FN_LOG DIGIT_1 DIGIT_0 DIGIT_0 DIGIT_0 PAREN_CLOSE EXEC_EQ | log(1000) | 3 | manual
+COMP | default | FN_LOG DIGIT_2 MOD_SHIFT SEP_COMMA DIGIT_1 DIGIT_6 PAREN_CLOSE EXEC_EQ | log(2,16) | 4 | manual
+COMP | default | FN_LOGBASE DIGIT_2 NAV_RIGHT DIGIT_1 DIGIT_6 EXEC_EQ | log₂(16) | 4 | manual
+COMP | LineIO,Sci3 | FN_LN DIGIT_9 DIGIT_0 PAREN_CLOSE EXEC_EQ | ln(90) | 4.50E0 | manual
+COMP | default | MOD_SHIFT FN_POW10 DIGIT_3 EXEC_EQ | 10^(3) | 1000 | manual?
+COMP | default | FN_LN MOD_ALPHA CONST_E PAREN_CLOSE EXEC_EQ | ln(e) | 1 | manual?
+
+# --- Trigonometri dan pi ---
+COMP | LineIO | FN_SIN DIGIT_3 DIGIT_0 PAREN_CLOSE EXEC_EQ | sin(30) | 0.5 | manual
+COMP | LineIO | MOD_SHIFT FN_ASIN DIGIT_0 DOT DIGIT_5 PAREN_CLOSE EXEC_EQ | sin⁻¹(0.5) | 30 | manual
+COMP | Rad | PAREN_OPEN MOD_SHIFT CONST_PI PAREN_CLOSE OP_DIV DIGIT_2 EXEC_EQ | (π)÷2 | 1⌟2π | manual?
+COMP | default | FN_TAN DIGIT_4 DIGIT_5 PAREN_CLOSE EXEC_EQ | tan(45) | 1 | manual?
+# tan tak terdefinisi pada kelipatan ganjil seperempat putaran (laporan pemilik produk 31 Okt 2026).
+COMP | default | FN_TAN DIGIT_9 DIGIT_0 PAREN_CLOSE EXEC_EQ | tan(90) | Math ERROR | manual?
+COMP | default | FN_TAN DIGIT_2 DIGIT_7 DIGIT_0 PAREN_CLOSE EXEC_EQ | tan(270) | Math ERROR | manual?
+COMP | Rad | FN_TAN MOD_SHIFT CONST_PI OP_DIV DIGIT_2 PAREN_CLOSE EXEC_EQ | tan(π÷2) | Math ERROR | manual?
+COMP | Gra | FN_TAN DIGIT_1 DIGIT_0 DIGIT_0 PAREN_CLOSE EXEC_EQ | tan(100) | Math ERROR | manual?
+COMP | default | FN_TAN DIGIT_1 DIGIT_8 DIGIT_0 PAREN_CLOSE EXEC_EQ | tan(180) | 0 | manual?
+COMP | default | MOD_SHIFT CONST_PI OP_MUL DIGIT_2 EXEC_EQ | π×2 | 2π | manual?
+
+# --- Fungsi lain ---
+COMP | default | PAREN_OPEN DIGIT_5 OP_ADD DIGIT_3 PAREN_CLOSE MOD_SHIFT POST_FACT EXEC_EQ | (5+3)! | 40320 | manual
+COMP | default | MOD_SHIFT FN_ABS DIGIT_2 OP_SUB DIGIT_7 NAV_RIGHT OP_MUL DIGIT_2 EXEC_EQ | Abs(2-7)×2 | 10 | manual
+COMP | default | DIGIT_1 DIGIT_0 MOD_SHIFT OP_NPR DIGIT_4 EXEC_EQ | 10P4 | 5040 | manual
+COMP | default | DIGIT_1 DIGIT_0 MOD_SHIFT OP_NCR DIGIT_4 EXEC_EQ | 10C4 | 210 | manual
+
+# --- Notasi tampilan: ENG, Fix, Rnd, Norm ---
+COMP | LineIO | DIGIT_1 DIGIT_2 DIGIT_3 DIGIT_4 EXEC_EQ FMT_ENG | 1234 | 1.234E3 | manual
+COMP | LineIO | DIGIT_1 DIGIT_2 DIGIT_3 EXEC_EQ MOD_SHIFT FMT_ENG_BACK | 123 | 0.123E3 | manual
+COMP | LineIO,Fix3 | DIGIT_1 DIGIT_0 OP_DIV DIGIT_3 OP_MUL DIGIT_3 EXEC_EQ | 10÷3×3 | 10.000 | manual
+COMP | LineIO,Fix3 | MOD_SHIFT FN_RND DIGIT_1 DIGIT_0 OP_DIV DIGIT_3 PAREN_CLOSE OP_MUL DIGIT_3 EXEC_EQ | Rnd(10÷3)×3 | 9.999 | manual
+COMP | LineIO | DIGIT_1 OP_DIV DIGIT_3 DIGIT_0 DIGIT_0 DIGIT_0 DIGIT_0 EXEC_EQ | 1÷30000 | 3.333333333E-5 | manual?
+COMP | LineIO | DIGIT_1 DIGIT_2 DIGIT_3 DIGIT_4 DIGIT_5 DIGIT_6 DIGIT_7 DIGIT_8 DIGIT_9 OP_MUL DIGIT_1 DIGIT_0 DIGIT_0 DIGIT_0 EXEC_EQ | 123456789×1000 | 1.23456789E11 | manual?
+
+# --- Variabel dan memori ---
+COMP | default | DIGIT_3 OP_ADD DIGIT_5 MOD_SHIFT MEM_STO VAR_A | 3+5→A | 8 | fisik
+COMP | default | DIGIT_3 OP_ADD DIGIT_5 MOD_SHIFT MEM_STO VAR_A MOD_ALPHA VAR_A OP_MUL DIGIT_1 DIGIT_0 EXEC_EQ | A×10 | 80 | manual
+COMP | default | DIGIT_1 DIGIT_0 OP_MUL DIGIT_5 MEM_MPLUS MEM_RCL VAR_M | 10×5 | 50 | manual
+
+# --- Pesan error ---
+COMP | default | DIGIT_1 OP_DIV DIGIT_0 EXEC_EQ | 1÷0 | Math ERROR | manual?
+COMP | default | FN_SQRT OP_NEG DIGIT_1 NAV_RIGHT EXEC_EQ | √(-1) | Math ERROR | manual?
+COMP | default | DIGIT_2 OP_MUL EXEC_EQ | 2× | Syntax ERROR | manual?
+COMP | LineIO | DIGIT_1 EXP10 DIGIT_1 DIGIT_0 DIGIT_0 EXEC_EQ | 1E100 | Math ERROR | manual?
+
+# --- CONST dan CONV (manual hlm. 42 dan 44) ---
+COMP | default | MOD_SHIFT MENU_CONST DIGIT_2 DIGIT_8 EXEC_EQ | C0 | 299792458 | manual
+COMP | default | FRAC DIGIT_1 NAV_DOWN FN_SQRT MOD_SHIFT MENU_CONST DIGIT_3 DIGIT_2 MOD_SHIFT MENU_CONST DIGIT_3 DIGIT_3 EXEC_EQ | 1⌟√(ε0μ0) | 299792458 | manual
+COMP | default | DIGIT_5 MOD_SHIFT MENU_CONV DIGIT_0 DIGIT_2 EXEC_EQ | 5cm▸in | 1.968503937 | manual
+COMP | default | OP_NEG DIGIT_3 DIGIT_1 MOD_SHIFT MENU_CONV DIGIT_3 DIGIT_8 EXEC_EQ | -31°C▸°F | -23.8 | manual
+# Manual hlm. 44 Contoh 2 mencetak 3.527396584, tetapi manual sendiri menyebut sumbernya
+# NIST SP 811 (2008) yang menetapkan 1 oz = 28.349523125 g tepat, sehingga 100 g =
+# 3.527396195 oz. Dua contoh lain di halaman itu cocok persis dengan kita. Pemilik produk
+# memutuskan 20 September 2026: ikuti NIST, angka di manual dianggap salah cetak.
+COMP | default | DIGIT_1 DIGIT_0 DIGIT_0 MOD_SHIFT MENU_CONV DIGIT_2 DIGIT_2 EXEC_EQ | 100g▸oz | 3.527396195 | manual?

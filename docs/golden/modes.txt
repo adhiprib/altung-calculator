@@ -1,0 +1,56 @@
+# ============================================================================
+# STATUS: BELUM DIVERIFIKASI UNIT FISIK
+# Kasus mode CMPLX, BASE-N, dan EQN (PRD §8 Tahap 4).
+# Sumber `manual` berasal dari contoh di User's Guide fx-570ES PLUS/fx-991ES PLUS;
+# `manual?` adalah rekonstruksi saya. Mohon rekam ulang dengan unit fisik.
+#
+# Catatan: token FN_CONJG, FN_ARG, FN_TO_POLAR, FN_TO_RECT, FN_AND, FN_OR, FN_XOR,
+# FN_XNOR, FN_NOT, dan FN_NEG pada kalkulator fisik dicapai lewat menu SHIFT 2
+# (CMPLX) dan SHIFT 3 (BASE), yang nomor pilihannya belum saya verifikasi.
+# Format lengkap: docs/golden/README.md
+# ============================================================================
+# mode | setup | urutan tombol | tampilan ekspresi | tampilan hasil | sumber
+
+# --- Bilangan kompleks ---
+CMPLX | default | FN_CONJG DIGIT_2 OP_ADD DIGIT_3 CONST_I PAREN_CLOSE EXEC_EQ | Conjg(2+3i) | 2-3i | manual
+CMPLX | default | FN_ABS DIGIT_1 OP_ADD CONST_I NAV_RIGHT EXEC_EQ | Abs(1+i) | √(2) | manual
+CMPLX | default | FN_ARG DIGIT_1 OP_ADD CONST_I PAREN_CLOSE EXEC_EQ | arg(1+i) | 45 | manual
+CMPLX | default | FN_SQRT DIGIT_2 NAV_RIGHT OP_ANGLE DIGIT_4 DIGIT_5 FN_TO_RECT EXEC_EQ | √(2)∠45▸a+bi | 1+i | manual
+CMPLX | default | PAREN_OPEN DIGIT_1 OP_ADD CONST_I PAREN_CLOSE OP_MUL PAREN_OPEN DIGIT_1 OP_SUB CONST_I PAREN_CLOSE EXEC_EQ | (1+i)×(1-i) | 2 | manual?
+CMPLX | default | DIGIT_1 OP_DIV CONST_I EXEC_EQ | 1÷i | -i | manual?
+CMPLX | default | CONST_I POST_SQUARE EXEC_EQ | i² | -1 | manual?
+
+# --- BASE-N ---
+BASE | default | BASE_BIN DIGIT_1 DIGIT_0 DIGIT_1 DIGIT_0 EXEC_EQ | 1010 | 1010 | manual?
+BASE | default | BASE_BIN DIGIT_1 DIGIT_0 DIGIT_1 DIGIT_0 EXEC_EQ BASE_DEC | 1010 | 10 | manual?
+BASE | default | BASE_HEX DIGIT_1 VAR_F OP_ADD DIGIT_1 EXEC_EQ | 1F+1 | 20 | manual?
+BASE | default | BASE_HEX DIGIT_2 DIGIT_5 DIGIT_5 EXEC_EQ BASE_DEC | 255 | 597 | manual?
+BASE | default | BASE_BIN DIGIT_1 DIGIT_0 DIGIT_1 DIGIT_0 FN_AND DIGIT_1 DIGIT_1 DIGIT_0 DIGIT_0 EXEC_EQ | 1010 and 1100 | 1000 | manual?
+BASE | default | BASE_BIN DIGIT_1 DIGIT_0 DIGIT_1 DIGIT_0 FN_OR DIGIT_1 DIGIT_1 DIGIT_0 DIGIT_0 EXEC_EQ | 1010 or 1100 | 1110 | manual?
+BASE | default | BASE_HEX FN_NOT DIGIT_0 PAREN_CLOSE EXEC_EQ | Not(0) | FFFFFFFF | manual?
+BASE | default | BASE_DEC DIGIT_7 OP_DIV DIGIT_2 EXEC_EQ | 7÷2 | 3 | manual?
+
+# --- EQN ---
+# Sesudah sel terakhir terisi, `=` sekali lagi tanpa ketikan barulah menghitung
+# (manual hlm. 61 langkah 4). Kelima kasus pertama adalah Contoh 1-5 manual hlm. 61-62.
+EQN | default | DIGIT_1 DIGIT_1 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_3 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_3 EXEC_EQ DIGIT_4 EXEC_EQ EXEC_EQ |  | X=-1 | manual
+EQN | default | DIGIT_1 DIGIT_1 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_3 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_3 EXEC_EQ DIGIT_4 EXEC_EQ EXEC_EQ NAV_DOWN |  | Y=2 | manual
+EQN | default | DIGIT_2 DIGIT_1 EXEC_EQ OP_NEG DIGIT_1 EXEC_EQ DIGIT_1 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_1 EXEC_EQ DIGIT_1 EXEC_EQ OP_NEG DIGIT_1 EXEC_EQ DIGIT_0 EXEC_EQ OP_NEG DIGIT_1 EXEC_EQ DIGIT_1 EXEC_EQ DIGIT_1 EXEC_EQ DIGIT_4 EXEC_EQ EXEC_EQ |  | X=1 | manual
+EQN | default | DIGIT_2 DIGIT_1 EXEC_EQ OP_NEG DIGIT_1 EXEC_EQ DIGIT_1 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_1 EXEC_EQ DIGIT_1 EXEC_EQ OP_NEG DIGIT_1 EXEC_EQ DIGIT_0 EXEC_EQ OP_NEG DIGIT_1 EXEC_EQ DIGIT_1 EXEC_EQ DIGIT_1 EXEC_EQ DIGIT_4 EXEC_EQ EXEC_EQ NAV_DOWN NAV_DOWN |  | Z=3 | manual
+EQN | default | DIGIT_3 DIGIT_1 EXEC_EQ DIGIT_1 EXEC_EQ DIGIT_3 FRAC DIGIT_4 EXEC_EQ EXEC_EQ |  | X1=-1⌟2+√(2)⌟2i | manual
+EQN | default | DIGIT_3 DIGIT_1 EXEC_EQ OP_NEG DIGIT_2 FN_SQRT DIGIT_2 PAREN_CLOSE EXEC_EQ DIGIT_2 EXEC_EQ EXEC_EQ |  | X=√(2) | manual
+# Contoh 5 manual hlm. 62 (x³-2x²-x+2) menampilkan akarnya urut -1, 2, 1. Kita memberi
+# ketiga akar yang sama tetapi urut 2, 1, -1, yaitu urutan baku rumus trigonometri Viète
+# (k = 0, 1, 2). Pemilik produk memutuskan 20 September 2026: pakai urutan kita.
+# Nilai akarnya sendiri tidak diragukan, hanya urutannya yang berbeda dari manual.
+EQN | default | DIGIT_4 DIGIT_1 EXEC_EQ OP_NEG DIGIT_2 EXEC_EQ OP_NEG DIGIT_1 EXEC_EQ DIGIT_2 EXEC_EQ EXEC_EQ |  | X1=2 | manual?
+EQN | default | DIGIT_4 DIGIT_1 EXEC_EQ OP_NEG DIGIT_2 EXEC_EQ OP_NEG DIGIT_1 EXEC_EQ DIGIT_2 EXEC_EQ EXEC_EQ NAV_DOWN NAV_DOWN |  | X3=-1 | manual?
+EQN | default | DIGIT_3 DIGIT_1 EXEC_EQ OP_NEG DIGIT_3 EXEC_EQ DIGIT_2 EXEC_EQ EXEC_EQ |  | X1=2 | manual?
+EQN | default | DIGIT_3 DIGIT_1 EXEC_EQ DIGIT_0 EXEC_EQ DIGIT_1 EXEC_EQ EXEC_EQ |  | X1=i | manual?
+EQN | default | DIGIT_4 DIGIT_1 EXEC_EQ OP_NEG DIGIT_6 EXEC_EQ DIGIT_1 DIGIT_1 EXEC_EQ OP_NEG DIGIT_6 EXEC_EQ EXEC_EQ |  | X1=3 | manual?
+CMPLX | default | PAREN_OPEN DIGIT_2 OP_ADD DIGIT_6 CONST_I PAREN_CLOSE OP_DIV PAREN_OPEN DIGIT_2 CONST_I PAREN_CLOSE EXEC_EQ | (2+6i)÷(2i) | 3-i | manual
+CMPLX | default | FN_CONJG DIGIT_2 OP_ADD DIGIT_3 CONST_I PAREN_CLOSE EXEC_EQ | Conjg(2+3i) | 2-3i | manual
+CMPLX | default | FN_ABS DIGIT_1 OP_ADD CONST_I PAREN_CLOSE EXEC_EQ | Abs(1+i) | √(2) | manual
+CMPLX | default | FN_ARG DIGIT_1 OP_ADD CONST_I PAREN_CLOSE EXEC_EQ | arg(1+i) | 45 | manual
+CMPLX | default | FN_SQRT DIGIT_2 NAV_RIGHT OP_ADD FN_SQRT DIGIT_2 NAV_RIGHT CONST_I FN_TO_POLAR EXEC_EQ | √(2)+√(2)i▸r∠θ | 2∠45 | manual
+CMPLX | default | DIGIT_2 OP_ANGLE DIGIT_4 DIGIT_5 FN_TO_RECT EXEC_EQ | 2∠45▸a+bi | √(2)+√(2)i | manual

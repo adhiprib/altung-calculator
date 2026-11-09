@@ -1,0 +1,41 @@
+# ============================================================================
+# STATUS: BELUM DIVERIFIKASI UNIT FISIK
+# Kasus mode STAT dan TABLE (PRD §8 Tahap 5). Semua bersumber `manual?`:
+# nilainya saya turunkan secara analitis, bukan disalin dari contoh manual.
+#
+# Catatan alur: masuk mode STAT membuka menu jenis (1:1-VAR, 2:A+BX, ...) lalu Statistics
+# Editor berkisi. `=` menyimpan sel dan turun satu baris; kolom Y dicapai dengan ►
+# lalu ▲ sampai baris pertama, seperti unit fisik (manual hlm. 49). AC memindahkan layar dari
+# Statistics Editor ke Statistics Calculation Screen, baru di situ MENU_STAT membuka menu hasil
+# (manual hlm. 50). Nomor butirnya dari manual hlm. 49-53: 1:Type 2:Data 3:Sum 4:Var
+# 5:Distr pada 1-VAR atau 5:Reg pada jenis berpasangan, 6:MinMax. Submenu Sum 1-VAR adalah
+# 1:Σx² 2:Σx, dan submenu Reg A+BX adalah 1:A 2:B 3:r 4:x̂ 5:ŷ.
+#
+# Mode TABLE menanyakan f(X), Start, End, lalu Step, masing-masing ditutup `=`.
+# Format lengkap: docs/golden/README.md
+# ============================================================================
+# mode | setup | urutan tombol | tampilan ekspresi | tampilan hasil | sumber
+
+# --- STAT 1-VAR: data 1,2,3,4,5 ---
+STAT | default | DIGIT_1 DIGIT_1 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_3 EXEC_EQ DIGIT_4 EXEC_EQ DIGIT_5 EXEC_EQ EDIT_AC MENU_STAT DIGIT_4 DIGIT_1 |  | 5 | manual?
+STAT | default | DIGIT_1 DIGIT_1 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_3 EXEC_EQ DIGIT_4 EXEC_EQ DIGIT_5 EXEC_EQ EDIT_AC MENU_STAT DIGIT_3 DIGIT_2 |  | 15 | manual?
+STAT | default | DIGIT_1 DIGIT_1 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_3 EXEC_EQ DIGIT_4 EXEC_EQ DIGIT_5 EXEC_EQ EDIT_AC MENU_STAT DIGIT_3 DIGIT_1 |  | 55 | manual?
+STAT | default | DIGIT_1 DIGIT_1 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_3 EXEC_EQ DIGIT_4 EXEC_EQ DIGIT_5 EXEC_EQ EDIT_AC MENU_STAT DIGIT_4 DIGIT_2 |  | 3 | manual?
+STAT | default | DIGIT_1 DIGIT_1 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_3 EXEC_EQ DIGIT_4 EXEC_EQ DIGIT_5 EXEC_EQ EDIT_AC MENU_STAT DIGIT_4 DIGIT_3 |  | 1.414213562 | manual?
+STAT | default | DIGIT_1 DIGIT_1 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_3 EXEC_EQ DIGIT_4 EXEC_EQ DIGIT_5 EXEC_EQ EDIT_AC MENU_STAT DIGIT_4 DIGIT_4 |  | 1.58113883 | manual?
+
+# --- STAT regresi linear: (1,2) (2,4) (3,6), garis sempurna y=2x ---
+STAT | default | DIGIT_2 DIGIT_1 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_3 EXEC_EQ NAV_RIGHT NAV_UP NAV_UP NAV_UP DIGIT_2 EXEC_EQ DIGIT_4 EXEC_EQ DIGIT_6 EXEC_EQ EDIT_AC MENU_STAT DIGIT_5 DIGIT_1 |  | 0 | manual?
+STAT | default | DIGIT_2 DIGIT_1 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_3 EXEC_EQ NAV_RIGHT NAV_UP NAV_UP NAV_UP DIGIT_2 EXEC_EQ DIGIT_4 EXEC_EQ DIGIT_6 EXEC_EQ EDIT_AC MENU_STAT DIGIT_5 DIGIT_2 |  | 2 | manual?
+STAT | default | DIGIT_2 DIGIT_1 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_3 EXEC_EQ NAV_RIGHT NAV_UP NAV_UP NAV_UP DIGIT_2 EXEC_EQ DIGIT_4 EXEC_EQ DIGIT_6 EXEC_EQ EDIT_AC MENU_STAT DIGIT_5 DIGIT_3 |  | 1 | manual?
+
+# --- STAT MinMax pada data 1..5 ---
+STAT | default | DIGIT_1 DIGIT_1 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_3 EXEC_EQ DIGIT_4 EXEC_EQ DIGIT_5 EXEC_EQ EDIT_AC MENU_STAT DIGIT_6 DIGIT_1 |  | 1 | manual?
+STAT | default | DIGIT_1 DIGIT_1 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_3 EXEC_EQ DIGIT_4 EXEC_EQ DIGIT_5 EXEC_EQ EDIT_AC MENU_STAT DIGIT_6 DIGIT_2 |  | 5 | manual?
+
+# --- TABLE f(X)=X² dari 1 sampai 3 langkah 1 ---
+TABLE | default | VAR_X POST_SQUARE EXEC_EQ DIGIT_1 EXEC_EQ DIGIT_3 EXEC_EQ DIGIT_1 EXEC_EQ |  | X=1  f(X)=1 | manual?
+TABLE | default | VAR_X POST_SQUARE EXEC_EQ DIGIT_1 EXEC_EQ DIGIT_3 EXEC_EQ DIGIT_1 EXEC_EQ NAV_DOWN |  | X=2  f(X)=4 | manual?
+TABLE | default | VAR_X POST_SQUARE EXEC_EQ DIGIT_1 EXEC_EQ DIGIT_3 EXEC_EQ DIGIT_1 EXEC_EQ NAV_DOWN NAV_DOWN |  | X=3  f(X)=9 | manual?
+TABLE | default | DIGIT_2 VAR_X OP_ADD DIGIT_1 EXEC_EQ DIGIT_0 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_1 EXEC_EQ NAV_DOWN |  | X=1  f(X)=3 | manual?
+TABLE | default | VAR_X EXEC_EQ DIGIT_1 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_0 EXEC_EQ |  | Math ERROR | manual?

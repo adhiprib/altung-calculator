@@ -1,0 +1,22 @@
+.gradle/
+build/
+**/build/
+local.properties
+.idea/
+*.iml
+.kotlin/
+captures/
+*.apk
+*.aab
+.tmp
+
+# APK rilis bertanda tangan untuk dibagikan; bukan sumber, jangan ikut git.
+rilis/
+
+# Buku petunjuk Casio (hak cipta Casio) hanya dipakai sebagai rujukan lokal; jangan masuk repo.
+fx-570ES_991ES_9910NG_PLUS_EN.pdf
+
+# Dokumen kerja internal dan alat sesi pengembangan; tidak ikut repo.
+CLAUDE.md
+PRD-Sempoa-570.md
+scripts/cloud-setup.sh

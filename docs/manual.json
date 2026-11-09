@@ -1,0 +1,1429 @@
+{
+  "version": 1,
+  "title": "Panduan Altung",
+  "intro": "",
+  "chapters": [
+    {
+      "title": "Mengenal layar dan tombol",
+      "intro": "Layar terbagi tiga. Baris paling atas berisi indikator kecil: huruf D, R, atau G untuk satuan sudut, tulisan Math bila tampilan bertingkat menyala, dan nama mode seperti STAT atau CMPLX. Di bawahnya baris ekspresi, tempat yang Anda ketik muncul. Paling bawah baris hasil, rata kanan.",
+      "steps": [
+        {
+          "text": "Tombol dibagi tiga lapis, sama seperti kalkulator saku. Tulisan putih di badan tombol adalah lapis utama, cukup ditekan langsung."
+        },
+        {
+          "keys": "SHIFT",
+          "text": "Menyalakan lapis kuning untuk satu tekanan berikutnya. Tulisan kuning di atas tombol adalah fungsi lapis ini. Menekan SHIFT dua kali membatalkannya."
+        },
+        {
+          "keys": "ALPHA",
+          "text": "Menyalakan lapis merah untuk satu tekanan berikutnya, dipakai mengetik huruf variabel A sampai F, X, dan Y."
+        },
+        {
+          "keys": "OPTION",
+          "text": "Milik aplikasi ini, bukan tiruan tombol asli. Isinya pilihan warna badan, getaran tombol, dan panduan yang sedang Anda baca."
+        }
+      ]
+    },
+    {
+      "title": "Mengetik seperti di buku",
+      "intro": "Tampilan bawaan menulis rumus sebagaimana ditulis tangan: pecahan bertingkat bergaris, akar dengan tanda akar sungguhan, pangkat naik kecil di kanan atas. Kotak kosong berkedip menandai tempat yang menunggu diisi.",
+      "steps": [
+        {
+          "keys": "pecahan",
+          "text": "Membuat pecahan. Angka yang sudah diketik di kiri langsung dipungut jadi pembilang. Ketik penyebutnya, lalu tekan panah kanan untuk keluar dari pecahan."
+        },
+        {
+          "keys": "akar",
+          "text": "Membuat akar. Isi radikannya, lalu panah kanan untuk keluar. Sama caranya untuk akar pangkat tiga dan logaritma berbasis."
+        },
+        {
+          "keys": "atas bawah",
+          "text": "Berpindah antara bagian atas dan bawah sebuah struktur: pembilang ke penyebut, batas bawah ke batas atas integral."
+        },
+        {
+          "keys": "kiri kanan",
+          "text": "Menggeser kursor satu langkah. Kursor masuk ke dalam struktur bila ada struktur di sebelahnya."
+        },
+        {
+          "text": "Anda juga bisa menyentuh langsung baris ekspresi untuk menaruh kursor di sana, termasuk menyentuh pembilang pecahan, pangkat, atau batas integral."
+        }
+      ],
+      "examples": [
+        {
+          "goal": "Menjumlahkan dua pecahan",
+          "press": "2 ▭/▭ 3 ► + 1 ▭/▭ 2 =",
+          "keys": "DIGIT_2 FRAC DIGIT_3 NAV_RIGHT OP_ADD DIGIT_1 FRAC DIGIT_2 EXEC_EQ",
+          "screen": "2⌟3+1⌟2",
+          "result": "7⌟6",
+          "mode": "COMP",
+          "setup": "default"
+        },
+        {
+          "goal": "Mengurangi bilangan campuran",
+          "press": "4 − SHIFT ▭▭/▭ 3 ► 1 ► 2 =",
+          "keys": "DIGIT_4 OP_SUB MOD_SHIFT FRAC_MIXED DIGIT_3 NAV_RIGHT DIGIT_1 NAV_RIGHT DIGIT_2 EXEC_EQ",
+          "screen": "4-3⌟1⌟2",
+          "result": "1⌟2",
+          "mode": "COMP",
+          "setup": "default"
+        },
+        {
+          "goal": "Pecahan dikurangkan dari bilangan bulat",
+          "press": "1 − 4 ▭/▭ 5 =",
+          "keys": "DIGIT_1 OP_SUB DIGIT_4 FRAC DIGIT_5 EXEC_EQ",
+          "screen": "1-4⌟5",
+          "result": "1⌟5",
+          "mode": "COMP",
+          "setup": "default"
+        },
+        {
+          "goal": "Pangkat berisi perhitungan",
+          "press": "( 1 + 1 ) x^▭ 2 + 2 =",
+          "keys": "PAREN_OPEN DIGIT_1 OP_ADD DIGIT_1 PAREN_CLOSE OP_POW DIGIT_2 OP_ADD DIGIT_2 EXEC_EQ",
+          "screen": "(1+1)^(2+2)",
+          "result": "16",
+          "mode": "COMP",
+          "setup": "default"
+        },
+        {
+          "goal": "Kuadrat lalu dipangkatkan tiga",
+          "press": "( 5 x² ) SHIFT x³ =",
+          "keys": "PAREN_OPEN DIGIT_5 POST_SQUARE PAREN_CLOSE MOD_SHIFT POST_CUBE EXEC_EQ",
+          "screen": "(5²)³",
+          "result": "15625",
+          "mode": "COMP",
+          "setup": "default"
+        },
+        {
+          "goal": "Akar pangkat lima dari 32",
+          "press": "SHIFT ▭√▭ 5 ► 3 2 =",
+          "keys": "MOD_SHIFT OP_NROOT DIGIT_5 NAV_RIGHT DIGIT_3 DIGIT_2 EXEC_EQ",
+          "screen": "5√(32)",
+          "result": "2",
+          "mode": "COMP",
+          "setup": "default"
+        },
+        {
+          "goal": "Dua pangkat sepuluh",
+          "press": "2 x^▭ 1 0 =",
+          "keys": "DIGIT_2 OP_POW DIGIT_1 DIGIT_0 EXEC_EQ",
+          "screen": "2^(10)",
+          "result": "1024",
+          "mode": "COMP",
+          "setup": "default"
+        },
+        {
+          "goal": "Akar pangkat tiga dari 27",
+          "press": "SHIFT ³√▭ 2 7 =",
+          "keys": "MOD_SHIFT FN_CBRT DIGIT_2 DIGIT_7 EXEC_EQ",
+          "screen": "³√(27)",
+          "result": "3",
+          "mode": "COMP",
+          "setup": "default"
+        }
+      ]
+    },
+    {
+      "title": "Memperbaiki ketikan",
+      "steps": [
+        {
+          "keys": "DEL",
+          "text": "Menghapus satu simpul di kiri kursor. Bila kursor berada tepat di kanan sebuah pecahan, seluruh pecahan itu yang terhapus."
+        },
+        {
+          "keys": "AC",
+          "text": "Mengosongkan baris ekspresi dan membatalkan hitungan yang sedang berjalan. Nilai variabel dan isi memori tidak ikut terhapus."
+        },
+        {
+          "keys": "SHIFT DEL",
+          "text": "INS. Setelah ditekan, nilai di kanan kursor menjadi isi templat berikutnya. Contoh: ketik 7 per 6, taruh kursor di depannya, tekan INS lalu tombol akar, hasilnya akar dari 7 per 6."
+        },
+        {
+          "keys": "panah kiri",
+          "text": "Dari layar kosong, memanggil kembali ekspresi terakhir untuk disunting. Tekan panah atas untuk menelusuri ekspresi yang lebih lama."
+        },
+        {
+          "keys": "SHIFT 9",
+          "text": "CLR, penghapusan bertingkat. 1:Setup mengembalikan mode dan seluruh setelan ke bawaan tanpa menyentuh isi memori; 2:Memory mengosongkan Ans, memori M, dan semua variabel tanpa menyentuh setelan; 3:All mengerjakan keduanya berikut matriks, vektor, dan data statistik. Tekan = untuk membenarkan, AC untuk membatalkan."
+        }
+      ],
+      "examples": [
+        {
+          "goal": "Salah ketik 125, dihapus lalu dibetulkan jadi 123",
+          "press": "1 2 5 DEL 3 =",
+          "keys": "DIGIT_1 DIGIT_2 DIGIT_5 EDIT_DEL DIGIT_3 EXEC_EQ",
+          "screen": "123",
+          "result": "123",
+          "mode": "COMP",
+          "setup": "default"
+        }
+      ]
+    },
+    {
+      "title": "Delapan mode",
+      "intro": "Tekan MODE lalu angka. Mode menentukan apa yang bisa dihitung dan tombol mana yang berubah arti.",
+      "steps": [
+        {
+          "keys": "MODE 1",
+          "text": "COMP. Hitungan biasa. Dipakai untuk hampir semua hal."
+        },
+        {
+          "keys": "MODE 2",
+          "text": "CMPLX. Bilangan kompleks, dengan satuan khayal i aktif."
+        },
+        {
+          "keys": "MODE 3",
+          "text": "STAT. Statistik satu atau dua peubah, termasuk regresi."
+        },
+        {
+          "keys": "MODE 4",
+          "text": "BASE-N. Bilangan biner, oktal, desimal, dan heksadesimal."
+        },
+        {
+          "keys": "MODE 5",
+          "text": "EQN. Sistem persamaan linear dua atau tiga peubah, dan persamaan kuadrat atau kubik."
+        },
+        {
+          "keys": "MODE 6",
+          "text": "MATRIX. Matriks sampai ukuran tiga kali tiga."
+        },
+        {
+          "keys": "MODE 7",
+          "text": "TABLE. Tabel nilai sebuah fungsi."
+        },
+        {
+          "keys": "MODE 8",
+          "text": "VECTOR. Vektor dua atau tiga komponen."
+        },
+        {
+          "text": "Berpindah mode mengosongkan baris ekspresi dan riwayatnya. Data statistik, matriks, dan vektor tetap tersimpan."
+        }
+      ]
+    },
+    {
+      "title": "Setelan",
+      "intro": "Tekan SHIFT MODE untuk membuka SETUP. Halaman pertama mengatur bentuk tampilan dan satuan sudut, halaman kedua bentuk pecahan dan bilangan kompleks. Tekan panah bawah untuk pindah halaman.",
+      "steps": [
+        {
+          "keys": "1",
+          "text": "MthIO. Tampilan bertingkat, hasil diutamakan bentuk eksak seperti pecahan, akar, dan pi. Ini bawaannya."
+        },
+        {
+          "keys": "2",
+          "text": "LineIO. Semua ditulis satu baris dan hasilnya desimal. Berguna bila rumusnya panjang."
+        },
+        {
+          "keys": "3 4 5",
+          "text": "Deg, Rad, Gra. Satuan sudut untuk fungsi trigonometri. Indikator D, R, atau G di tepi atas menunjukkan yang sedang aktif."
+        },
+        {
+          "keys": "6",
+          "text": "Fix. Jumlah angka di belakang koma dipatok, 0 sampai 9."
+        },
+        {
+          "keys": "7",
+          "text": "Sci. Notasi ilmiah dengan jumlah angka berarti yang Anda pilih."
+        },
+        {
+          "keys": "8",
+          "text": "Norm 1 atau Norm 2. Kembali ke penulisan biasa. Norm 1 beralih ke notasi ilmiah lebih cepat untuk bilangan kecil."
+        },
+        {
+          "keys": "SETUP lalu halaman dua, 1",
+          "text": "Hasil pecahan ditulis sebagai bilangan campuran, misalnya satu dan satu per dua."
+        },
+        {
+          "keys": "SETUP lalu halaman dua, 2",
+          "text": "Hasil pecahan ditulis sebagai pecahan biasa. Ini bawaannya."
+        }
+      ],
+      "examples": [
+        {
+          "goal": "Hasil yang sama dengan Fix 3",
+          "press": "√▭ 2 ► × 3 = S⇔D",
+          "keys": "FN_SQRT DIGIT_2 NAV_RIGHT OP_MUL DIGIT_3 EXEC_EQ FMT_SD",
+          "screen": "√(2)×3",
+          "result": "4.243",
+          "mode": "COMP",
+          "setup": "Fix3"
+        },
+        {
+          "goal": "Notasi teknik menggeser koma ke kanan",
+          "press": "1 2 3 4 = ENG",
+          "keys": "DIGIT_1 DIGIT_2 DIGIT_3 DIGIT_4 EXEC_EQ FMT_ENG",
+          "screen": "1234",
+          "result": "1.234E3",
+          "mode": "COMP",
+          "setup": "LineIO"
+        },
+        {
+          "goal": "Notasi teknik menggeser koma ke kiri",
+          "press": "1 2 3 = SHIFT ←",
+          "keys": "DIGIT_1 DIGIT_2 DIGIT_3 EXEC_EQ MOD_SHIFT FMT_ENG_BACK",
+          "screen": "123",
+          "result": "0.123E3",
+          "mode": "COMP",
+          "setup": "LineIO"
+        },
+        {
+          "goal": "Rnd membulatkan nilai dalamnya ke format tampilan",
+          "press": "SHIFT Rnd( 1 0 ÷ 3 ) × 3 =",
+          "keys": "MOD_SHIFT FN_RND DIGIT_1 DIGIT_0 OP_DIV DIGIT_3 PAREN_CLOSE OP_MUL DIGIT_3 EXEC_EQ",
+          "screen": "Rnd(10÷3)×3",
+          "result": "9.999",
+          "mode": "COMP",
+          "setup": "LineIO,Fix3"
+        },
+        {
+          "goal": "Bilangan kecil ditulis notasi ilmiah",
+          "press": "1 ÷ 3 0 0 0 0 =",
+          "keys": "DIGIT_1 OP_DIV DIGIT_3 DIGIT_0 DIGIT_0 DIGIT_0 DIGIT_0 EXEC_EQ",
+          "screen": "1÷30000",
+          "result": "3.333333333E-5",
+          "mode": "COMP",
+          "setup": "LineIO"
+        }
+      ]
+    },
+    {
+      "title": "Hitungan sehari-hari",
+      "intro": "Ketik seperti menulis di kertas, lalu tekan sama dengan. Urutan operasi dihitung sendiri: kurung dulu, lalu pangkat dan akar, lalu kali dan bagi, baru tambah dan kurang.",
+      "steps": [
+        {
+          "keys": "kurung",
+          "text": "Kurung buka mencetak satu kurung saja. Kurung tutup baru muncul saat Anda menekannya. Kurung tutup di ujung ekspresi boleh dibiarkan terbuka sebelum menekan sama dengan."
+        },
+        {
+          "text": "Tanda kali boleh dihilangkan di depan kurung, di depan nama fungsi, dan di depan huruf variabel. Menulis 3 lalu kurung buka sudah berarti tiga kali."
+        },
+        {
+          "keys": "SHIFT kurung buka",
+          "text": "Persen. Angka di kirinya dibagi seratus. Untuk mencari 12 persen dari 250, ketik 250 kali 12 persen."
+        },
+        {
+          "keys": "SHIFT kali sepuluh pangkat",
+          "text": "Menyisipkan pi. Tombol Ans dengan lapis merah memberi bilangan e."
+        },
+        {
+          "keys": "x pangkat minus satu",
+          "text": "Kebalikan bilangan di kirinya. Lapis kuningnya adalah faktorial."
+        },
+        {
+          "keys": "SHIFT bagi",
+          "text": "nCr, banyaknya kombinasi. Lapis kuning tombol kali memberi nPr, banyaknya permutasi."
+        }
+      ],
+      "examples": [
+        {
+          "goal": "Kali dikerjakan lebih dulu daripada tambah",
+          "press": "2 + 3 × 4 =",
+          "keys": "DIGIT_2 OP_ADD DIGIT_3 OP_MUL DIGIT_4 EXEC_EQ",
+          "screen": "2+3×4",
+          "result": "14",
+          "mode": "COMP",
+          "setup": "default"
+        },
+        {
+          "goal": "Kurung mengubah urutan pengerjaannya",
+          "press": "( 2 + 3 ) × 4 =",
+          "keys": "PAREN_OPEN DIGIT_2 OP_ADD DIGIT_3 PAREN_CLOSE OP_MUL DIGIT_4 EXEC_EQ",
+          "screen": "(2+3)×4",
+          "result": "20",
+          "mode": "COMP",
+          "setup": "default"
+        },
+        {
+          "goal": "Masukan berkoma tetap dijawab berkoma",
+          "press": "4 × 3 + 2 . 5 =",
+          "keys": "DIGIT_4 OP_MUL DIGIT_3 OP_ADD DIGIT_2 DOT DIGIT_5 EXEC_EQ",
+          "screen": "4×3+2.5",
+          "result": "14.5",
+          "mode": "COMP",
+          "setup": "default"
+        },
+        {
+          "goal": "Tanda negatif di depan bilangan",
+          "press": "(−) 5 + 8 =",
+          "keys": "OP_NEG DIGIT_5 OP_ADD DIGIT_8 EXEC_EQ",
+          "screen": "-5+8",
+          "result": "3",
+          "mode": "COMP",
+          "setup": "default"
+        },
+        {
+          "goal": "Dua puluh persen dari 150",
+          "press": "1 5 0 × 2 0 SHIFT % =",
+          "keys": "DIGIT_1 DIGIT_5 DIGIT_0 OP_MUL DIGIT_2 DIGIT_0 MOD_SHIFT POST_PERCENT EXEC_EQ",
+          "screen": "150×20%",
+          "result": "30",
+          "mode": "COMP",
+          "setup": "default"
+        },
+        {
+          "goal": "Berapa persen 660 terhadap 880",
+          "press": "6 6 0 ÷ 8 8 0 SHIFT % =",
+          "keys": "DIGIT_6 DIGIT_6 DIGIT_0 OP_DIV DIGIT_8 DIGIT_8 DIGIT_0 MOD_SHIFT POST_PERCENT EXEC_EQ",
+          "screen": "660÷880%",
+          "result": "75",
+          "mode": "COMP",
+          "setup": "default"
+        },
+        {
+          "goal": "Menaikkan 2500 sebesar 15 persen",
+          "press": "2 5 0 0 + 2 5 0 0 × 1 5 SHIFT % =",
+          "keys": "DIGIT_2 DIGIT_5 DIGIT_0 DIGIT_0 OP_ADD DIGIT_2 DIGIT_5 DIGIT_0 DIGIT_0 OP_MUL DIGIT_1 DIGIT_5 MOD_SHIFT POST_PERCENT EXEC_EQ",
+          "screen": "2500+2500×15%",
+          "result": "2875",
+          "mode": "COMP",
+          "setup": "default"
+        },
+        {
+          "goal": "Menurunkan 3500 sebesar 25 persen",
+          "press": "3 5 0 0 − 3 5 0 0 × 2 5 SHIFT % =",
+          "keys": "DIGIT_3 DIGIT_5 DIGIT_0 DIGIT_0 OP_SUB DIGIT_3 DIGIT_5 DIGIT_0 DIGIT_0 OP_MUL DIGIT_2 DIGIT_5 MOD_SHIFT POST_PERCENT EXEC_EQ",
+          "screen": "3500-3500×25%",
+          "result": "2625",
+          "mode": "COMP",
+          "setup": "default"
+        },
+        {
+          "goal": "Menulis 1,2 kali sepuluh pangkat tiga",
+          "press": "1 . 2 × 1 0 x^▭ 3 =",
+          "keys": "DIGIT_1 DOT DIGIT_2 OP_MUL DIGIT_1 DIGIT_0 OP_POW DIGIT_3 EXEC_EQ",
+          "screen": "1.2×10^(3)",
+          "result": "1200",
+          "mode": "COMP",
+          "setup": "default"
+        },
+        {
+          "goal": "Logaritma basis sepuluh",
+          "press": "log( 1 0 0 0 ) =",
+          "keys": "FN_LOG DIGIT_1 DIGIT_0 DIGIT_0 DIGIT_0 PAREN_CLOSE EXEC_EQ",
+          "screen": "log(1000)",
+          "result": "3",
+          "mode": "COMP",
+          "setup": "default"
+        },
+        {
+          "goal": "Logaritma dengan basis yang dipilih sendiri",
+          "press": "log▭(▭) 2 ► 1 6 =",
+          "keys": "FN_LOGBASE DIGIT_2 NAV_RIGHT DIGIT_1 DIGIT_6 EXEC_EQ",
+          "screen": "log₂(16)",
+          "result": "4",
+          "mode": "COMP",
+          "setup": "default"
+        },
+        {
+          "goal": "Sepuluh pangkat tiga",
+          "press": "SHIFT 10^ 3 =",
+          "keys": "MOD_SHIFT FN_POW10 DIGIT_3 EXEC_EQ",
+          "screen": "10^(3)",
+          "result": "1000",
+          "mode": "COMP",
+          "setup": "default"
+        },
+        {
+          "goal": "Logaritma alami dari bilangan e",
+          "press": "ln( ALPHA e ) =",
+          "keys": "FN_LN MOD_ALPHA CONST_E PAREN_CLOSE EXEC_EQ",
+          "screen": "ln(e)",
+          "result": "1",
+          "mode": "COMP",
+          "setup": "default"
+        },
+        {
+          "goal": "Kelipatan pi tetap ditulis sebagai pi",
+          "press": "SHIFT π × 2 =",
+          "keys": "MOD_SHIFT CONST_PI OP_MUL DIGIT_2 EXEC_EQ",
+          "screen": "π×2",
+          "result": "2π",
+          "mode": "COMP",
+          "setup": "default"
+        },
+        {
+          "goal": "Faktorial dari hasil penjumlahan",
+          "press": "( 5 + 3 ) SHIFT x! =",
+          "keys": "PAREN_OPEN DIGIT_5 OP_ADD DIGIT_3 PAREN_CLOSE MOD_SHIFT POST_FACT EXEC_EQ",
+          "screen": "(5+3)!",
+          "result": "40320",
+          "mode": "COMP",
+          "setup": "default"
+        },
+        {
+          "goal": "Nilai mutlak selisih",
+          "press": "SHIFT Abs( 2 − 7 ► × 2 =",
+          "keys": "MOD_SHIFT FN_ABS DIGIT_2 OP_SUB DIGIT_7 NAV_RIGHT OP_MUL DIGIT_2 EXEC_EQ",
+          "screen": "Abs(2-7)×2",
+          "result": "10",
+          "mode": "COMP",
+          "setup": "default"
+        },
+        {
+          "goal": "Permutasi 10 diambil 4",
+          "press": "1 0 SHIFT nPr 4 =",
+          "keys": "DIGIT_1 DIGIT_0 MOD_SHIFT OP_NPR DIGIT_4 EXEC_EQ",
+          "screen": "10P4",
+          "result": "5040",
+          "mode": "COMP",
+          "setup": "default"
+        },
+        {
+          "goal": "Kombinasi 10 diambil 4",
+          "press": "1 0 SHIFT nCr 4 =",
+          "keys": "DIGIT_1 DIGIT_0 MOD_SHIFT OP_NCR DIGIT_4 EXEC_EQ",
+          "screen": "10C4",
+          "result": "210",
+          "mode": "COMP",
+          "setup": "default"
+        }
+      ]
+    },
+    {
+      "title": "Ans, memori, dan variabel",
+      "steps": [
+        {
+          "keys": "Ans",
+          "text": "Hasil hitungan terakhir. Memulai ketikan dengan tombol operator juga otomatis melanjutkan dari Ans."
+        },
+        {
+          "keys": "SHIFT RCL",
+          "text": "STO. Setelah ditekan, kalkulator menunggu nama variabel, jadi tombol hurufnya langsung berlaku tanpa ALPHA. Baris ekspresi ditutup tanda panah ke nama itu."
+        },
+        {
+          "keys": "RCL",
+          "text": "Memanggil isi sebuah variabel. Sama seperti STO, tombol hurufnya langsung berlaku."
+        },
+        {
+          "keys": "M tambah",
+          "text": "Menambahkan nilai di layar ke memori M. Lapis kuningnya menguranginya."
+        },
+        {
+          "text": "Variabel yang tersedia: A, B, C, D, E, F, X, Y, dan M. Isinya bertahan walau aplikasi ditutup."
+        }
+      ],
+      "examples": [
+        {
+          "goal": "Memulai dengan operator melanjutkan dari Ans",
+          "press": "3 × 4 = Ans + 1 =",
+          "keys": "DIGIT_3 OP_MUL DIGIT_4 EXEC_EQ MEM_ANS OP_ADD DIGIT_1 EXEC_EQ",
+          "screen": "Ans+1",
+          "result": "13",
+          "mode": "COMP",
+          "setup": "default"
+        },
+        {
+          "goal": "Menyimpan hasil ke variabel A",
+          "press": "3 + 5 SHIFT STO ALPHA A",
+          "keys": "DIGIT_3 OP_ADD DIGIT_5 MOD_SHIFT MEM_STO VAR_A",
+          "screen": "3+5→A",
+          "result": "8",
+          "mode": "COMP",
+          "setup": "default"
+        },
+        {
+          "goal": "Memakai isi variabel A dalam hitungan",
+          "press": "3 + 5 SHIFT STO ALPHA A ALPHA A × 1 0 =",
+          "keys": "DIGIT_3 OP_ADD DIGIT_5 MOD_SHIFT MEM_STO VAR_A MOD_ALPHA VAR_A OP_MUL DIGIT_1 DIGIT_0 EXEC_EQ",
+          "screen": "A×10",
+          "result": "80",
+          "mode": "COMP",
+          "setup": "default"
+        }
+      ]
+    },
+    {
+      "title": "Pecahan, akar, dan bentuk eksak",
+      "intro": "Pada tampilan bertingkat, hasil diberikan dalam bentuk eksak bila memang bisa: pecahan, kelipatan akar, atau kelipatan pi. Masukan berkoma tetap dijawab berkoma.",
+      "steps": [
+        {
+          "keys": "S dan D",
+          "text": "Bolak-balik antara bentuk eksak dan bentuk desimal. Menekan sekali lagi mengembalikannya."
+        },
+        {
+          "text": "Akar dua suku ikut dipertahankan. Kurung buka, akar 2, tutup, tambah 2, tutup, kali akar 3 memberi akar 6 ditambah 2 akar 3."
+        },
+        {
+          "text": "Bila koefisiennya terlalu besar, hasilnya ditulis desimal. Batasnya sama dengan kalkulator saku: koefisien sampai 99, radikan sampai 999."
+        },
+        {
+          "keys": "SHIFT S dan D",
+          "text": "Bolak-balik antara pecahan biasa dan bilangan campuran."
+        }
+      ],
+      "examples": [
+        {
+          "goal": "Hasil pecahan diubah ke desimal dengan S⇔D",
+          "press": "1 − 4 ▭/▭ 5 = S⇔D",
+          "keys": "DIGIT_1 OP_SUB DIGIT_4 FRAC DIGIT_5 EXEC_EQ FMT_SD",
+          "screen": "1-4⌟5",
+          "result": "0.2",
+          "mode": "COMP",
+          "setup": "default"
+        },
+        {
+          "goal": "Pecahan biasa diubah ke bilangan campuran",
+          "press": "7 ▭/▭ 6 = SHIFT ab/c⇔d/c",
+          "keys": "DIGIT_7 FRAC DIGIT_6 EXEC_EQ MOD_SHIFT FMT_ABC_DC",
+          "screen": "7⌟6",
+          "result": "1⌟1⌟6",
+          "mode": "COMP",
+          "setup": "default"
+        },
+        {
+          "goal": "Pangkat negatif memberi kebalikannya",
+          "press": "3 x⁻¹ =",
+          "keys": "DIGIT_3 POST_RECIP EXEC_EQ",
+          "screen": "3^(-1)",
+          "result": "1⌟3",
+          "mode": "COMP",
+          "setup": "default"
+        },
+        {
+          "goal": "Akar dua dikali tiga tetap berbentuk akar",
+          "press": "√▭ 2 ► × 3 =",
+          "keys": "FN_SQRT DIGIT_2 NAV_RIGHT OP_MUL DIGIT_3 EXEC_EQ",
+          "screen": "√(2)×3",
+          "result": "3√(2)",
+          "mode": "COMP",
+          "setup": "default"
+        },
+        {
+          "goal": "Akar 8 menyederhana sendiri",
+          "press": "√▭ 8 =",
+          "keys": "FN_SQRT DIGIT_8 EXEC_EQ",
+          "screen": "√(8)",
+          "result": "2√(2)",
+          "mode": "COMP",
+          "setup": "default"
+        },
+        {
+          "goal": "Akar dikali akar",
+          "press": "√▭ 2 ► × √▭ 3 =",
+          "keys": "FN_SQRT DIGIT_2 NAV_RIGHT OP_MUL FN_SQRT DIGIT_3 EXEC_EQ",
+          "screen": "√(2)×√(3)",
+          "result": "√(6)",
+          "mode": "COMP",
+          "setup": "default"
+        },
+        {
+          "goal": "Hasil yang menyisakan dua suku berakar",
+          "press": "( √▭ 2 ► + 2 ) × √▭ 3 =",
+          "keys": "PAREN_OPEN FN_SQRT DIGIT_2 NAV_RIGHT OP_ADD DIGIT_2 PAREN_CLOSE OP_MUL FN_SQRT DIGIT_3 EXEC_EQ",
+          "screen": "(√(2)+2)×√(3)",
+          "result": "√(6)+2√(3)",
+          "mode": "COMP",
+          "setup": "default"
+        },
+        {
+          "goal": "Dua suku berakar dijumlahkan",
+          "press": "1 0 √▭ 2 ► + 1 5 × 3 √▭ 3 =",
+          "keys": "DIGIT_1 DIGIT_0 FN_SQRT DIGIT_2 NAV_RIGHT OP_ADD DIGIT_1 DIGIT_5 OP_MUL DIGIT_3 FN_SQRT DIGIT_3 EXEC_EQ",
+          "screen": "10√(2)+15×3√(3)",
+          "result": "45√(3)+10√(2)",
+          "mode": "COMP",
+          "setup": "default"
+        },
+        {
+          "goal": "Koefisien terlalu besar, hasilnya desimal",
+          "press": "9 9 √▭ 9 9 9 =",
+          "keys": "DIGIT_9 DIGIT_9 FN_SQRT DIGIT_9 DIGIT_9 DIGIT_9 EXEC_EQ",
+          "screen": "99√(999)",
+          "result": "3129.089165",
+          "mode": "COMP",
+          "setup": "default"
+        }
+      ]
+    },
+    {
+      "title": "Sudut",
+      "steps": [
+        {
+          "text": "Pilih satuan sudut lewat SETUP sebelum menghitung. Sinus 60 derajat memberi setengah akar 3, sedangkan sinus 60 radian memberi bilangan yang sama sekali lain."
+        },
+        {
+          "keys": "derajat menit detik",
+          "text": "Menyisipkan pemisah derajat, menit, dan detik. Ketik 12, tombol ini, 30, tombol ini lagi untuk 12 derajat 30 menit."
+        },
+        {
+          "keys": "SHIFT derajat menit detik",
+          "text": "Mengubah hasil desimal menjadi derajat menit detik, dan sebaliknya."
+        },
+        {
+          "keys": "SHIFT Ans",
+          "text": "Menu pengubah satuan sudut. Pilih derajat, radian, atau gradian; penandanya ditulis sesudah nilainya."
+        },
+        {
+          "keys": "hyp",
+          "text": "Membuka menu fungsi hiperbolik dan kebalikannya."
+        }
+      ],
+      "examples": [
+        {
+          "goal": "Menjumlahkan dua sudut derajat-menit-detik",
+          "press": "2 °′″ 2 0 °′″ 3 0 °′″ + 0 °′″ 3 9 °′″ 3 0 °′″ =",
+          "keys": "DIGIT_2 POST_DMS DIGIT_2 DIGIT_0 POST_DMS DIGIT_3 DIGIT_0 POST_DMS OP_ADD DIGIT_0 POST_DMS DIGIT_3 DIGIT_9 POST_DMS DIGIT_3 DIGIT_0 POST_DMS EXEC_EQ",
+          "screen": "2°20'30\"+0°39'30\"",
+          "result": "3°0'0\"",
+          "mode": "COMP",
+          "setup": "default"
+        },
+        {
+          "goal": "Mengetik 2 derajat 15 menit 18 detik",
+          "press": "2 °′″ 1 5 °′″ 1 8 °′″ =",
+          "keys": "DIGIT_2 POST_DMS DIGIT_1 DIGIT_5 POST_DMS DIGIT_1 DIGIT_8 POST_DMS EXEC_EQ",
+          "screen": "2°15'18\"",
+          "result": "2°15'18\"",
+          "mode": "COMP",
+          "setup": "default"
+        },
+        {
+          "goal": "Sudut yang sama diubah ke derajat desimal",
+          "press": "2 °′″ 1 5 °′″ 1 8 °′″ = °′″",
+          "keys": "DIGIT_2 POST_DMS DIGIT_1 DIGIT_5 POST_DMS DIGIT_1 DIGIT_8 POST_DMS EXEC_EQ POST_DMS",
+          "screen": "2°15'18\"",
+          "result": "2.255",
+          "mode": "COMP",
+          "setup": "default"
+        },
+        {
+          "goal": "Sinus 30 derajat",
+          "press": "sin( 3 0 ) =",
+          "keys": "FN_SIN DIGIT_3 DIGIT_0 PAREN_CLOSE EXEC_EQ",
+          "screen": "sin(30)",
+          "result": "0.5",
+          "mode": "COMP",
+          "setup": "LineIO"
+        },
+        {
+          "goal": "Sudut yang sinusnya 0,5",
+          "press": "SHIFT sin⁻¹( 0 . 5 ) =",
+          "keys": "MOD_SHIFT FN_ASIN DIGIT_0 DOT DIGIT_5 PAREN_CLOSE EXEC_EQ",
+          "screen": "sin⁻¹(0.5)",
+          "result": "30",
+          "mode": "COMP",
+          "setup": "LineIO"
+        },
+        {
+          "goal": "Setengah pi dalam satuan radian",
+          "press": "( SHIFT π ) ÷ 2 =",
+          "keys": "PAREN_OPEN MOD_SHIFT CONST_PI PAREN_CLOSE OP_DIV DIGIT_2 EXEC_EQ",
+          "screen": "(π)÷2",
+          "result": "1⌟2π",
+          "mode": "COMP",
+          "setup": "Rad"
+        },
+        {
+          "goal": "Tangen 45 derajat",
+          "press": "tan( 4 5 ) =",
+          "keys": "FN_TAN DIGIT_4 DIGIT_5 PAREN_CLOSE EXEC_EQ",
+          "screen": "tan(45)",
+          "result": "1",
+          "mode": "COMP",
+          "setup": "default"
+        }
+      ]
+    },
+    {
+      "title": "Konstanta ilmiah (CONST)",
+      "intro": "Empat puluh konstanta fisika tersedia bernomor 01 sampai 40. Tekan SHIFT lalu 7, isikan nomornya, dan konstanta itu masuk ke ekspresi sebagai lambangnya. Nilainya baru dipakai saat Anda menekan sama dengan. CONST tidak berlaku di mode BASE-N. Daftar lengkapnya ada di bawah ini.",
+      "steps": [
+        {
+          "keys": "SHIFT 7",
+          "text": "Membuka layar CONSTANT. Layar menanyakan nomor 01~40; ketik dua digitnya."
+        },
+        {
+          "text": "Contoh: untuk memakai laju cahaya, buka CONST lalu ketik 28. Lambang C0 muncul di baris ekspresi, dan sama dengan memberi 299792458."
+        }
+      ],
+      "table": "const",
+      "examples": [
+        {
+          "goal": "Laju cahaya dalam vakum, nomor 28",
+          "press": "SHIFT CONST 2 8 =",
+          "keys": "MOD_SHIFT MENU_CONST DIGIT_2 DIGIT_8 EXEC_EQ",
+          "screen": "C0",
+          "result": "299792458",
+          "mode": "COMP",
+          "setup": "default"
+        },
+        {
+          "goal": "Laju cahaya dari permitivitas dan permeabilitas",
+          "press": "▭/▭ 1 ▼ √▭ SHIFT CONST 3 2 SHIFT CONST 3 3 =",
+          "keys": "FRAC DIGIT_1 NAV_DOWN FN_SQRT MOD_SHIFT MENU_CONST DIGIT_3 DIGIT_2 MOD_SHIFT MENU_CONST DIGIT_3 DIGIT_3 EXEC_EQ",
+          "screen": "1⌟√(ε0μ0)",
+          "result": "299792458",
+          "mode": "COMP",
+          "setup": "default"
+        }
+      ]
+    },
+    {
+      "title": "Konversi satuan (CONV)",
+      "intro": "Empat puluh perintah konversi tersedia bernomor 01 sampai 40. Ketik dulu nilainya, tekan SHIFT lalu 8, isikan nomor perintahnya; perintah itu berdiri di belakang nilainya dan baru dihitung saat Anda menekan sama dengan. Tanda minus di depan ikut terbawa. CONV tidak berlaku di BASE-N maupun TABLE. Daftar lengkapnya di bawah ini.",
+      "steps": [
+        {
+          "keys": "SHIFT 8",
+          "text": "Membuka layar CONVERSION. Layar menanyakan nomor 01~40; ketik dua digitnya."
+        },
+        {
+          "text": "Contoh: ketik 5, buka CONV, ketik 02 untuk sentimeter ke inci, lalu sama dengan. Tanda ▸ pada nama perintah berarti diubah menjadi."
+        }
+      ],
+      "table": "conv",
+      "examples": [
+        {
+          "goal": "Lima sentimeter menjadi inci, nomor 02",
+          "press": "5 SHIFT CONV 0 2 =",
+          "keys": "DIGIT_5 MOD_SHIFT MENU_CONV DIGIT_0 DIGIT_2 EXEC_EQ",
+          "screen": "5cm▸in",
+          "result": "1.968503937",
+          "mode": "COMP",
+          "setup": "default"
+        },
+        {
+          "goal": "Minus 31 derajat Celsius menjadi Fahrenheit",
+          "press": "(−) 3 1 SHIFT CONV 3 8 =",
+          "keys": "OP_NEG DIGIT_3 DIGIT_1 MOD_SHIFT MENU_CONV DIGIT_3 DIGIT_8 EXEC_EQ",
+          "screen": "-31°C▸°F",
+          "result": "-23.8",
+          "mode": "COMP",
+          "setup": "default"
+        },
+        {
+          "goal": "Seratus gram menjadi ons",
+          "press": "1 0 0 SHIFT CONV 2 2 =",
+          "keys": "DIGIT_1 DIGIT_0 DIGIT_0 MOD_SHIFT MENU_CONV DIGIT_2 DIGIT_2 EXEC_EQ",
+          "screen": "100g▸oz",
+          "result": "3.527396195",
+          "mode": "COMP",
+          "setup": "default"
+        }
+      ]
+    },
+    {
+      "title": "CALC dan SOLVE",
+      "intro": "Dua cara memakai satu rumus berulang kali dengan angka yang berganti-ganti.",
+      "steps": [
+        {
+          "keys": "CALC",
+          "text": "Ketik rumus memakai huruf variabel, misalnya A dikali B, lalu tekan CALC. Kalkulator menanyakan nilai A, lalu nilai B, lalu memberi hasilnya. Tekan sama dengan untuk mengulang dengan angka baru."
+        },
+        {
+          "keys": "SHIFT CALC",
+          "text": "SOLVE. Mencari akar sebuah persamaan terhadap satu peubah. Hanya tersedia di mode COMP."
+        },
+        {
+          "text": "Layar akan menanyakan tebakan awal. Isi angka yang kira-kira dekat dengan jawabannya, lalu tekan sama dengan."
+        },
+        {
+          "text": "Layar solusi memperlihatkan tiga baris: persamaannya, nilai akarnya, dan sisa ruas kiri dikurangi ruas kanan. Sisa yang mendekati nol berarti akarnya sudah baik."
+        },
+        {
+          "text": "Bila pencarian belum bertemu akar, layar menawarkan lanjut. Tekan AC untuk keluar."
+        }
+      ],
+      "examples": [
+        {
+          "goal": "Mencari akar X kuadrat dikurangi 4",
+          "press": "ALPHA X x² − 4 SHIFT SOLVE =",
+          "keys": "MOD_ALPHA VAR_X POST_SQUARE OP_SUB DIGIT_4 MOD_SHIFT FN_SOLVE EXEC_EQ",
+          "screen": "X²-4",
+          "result": "X=2",
+          "mode": "COMP",
+          "setup": "default"
+        },
+        {
+          "goal": "Menyelesaikan 2X+6=0",
+          "press": "2 ALPHA X + 6 ALPHA = 0 SHIFT SOLVE =",
+          "keys": "DIGIT_2 MOD_ALPHA VAR_X OP_ADD DIGIT_6 MOD_ALPHA REL_EQ DIGIT_0 MOD_SHIFT FN_SOLVE EXEC_EQ",
+          "screen": "2X+6=0",
+          "result": "X=-3",
+          "mode": "COMP",
+          "setup": "default"
+        }
+      ]
+    },
+    {
+      "title": "Kalkulus",
+      "intro": "Integral, turunan, dan penjumlahan beruntun ditulis bertingkat pada tampilan bertingkat, dan sebaris pada tampilan satu baris.",
+      "steps": [
+        {
+          "keys": "integral",
+          "text": "Integral tentu. Isi integrannya, lalu panah bawah dan panah atas untuk mengisi batas bawah dan batas atas. Peubahnya selalu X."
+        },
+        {
+          "keys": "SHIFT integral",
+          "text": "Turunan di satu titik. Isi fungsinya, lalu titik tempat turunannya dihitung."
+        },
+        {
+          "keys": "SHIFT log berbasis",
+          "text": "Penjumlahan beruntun. Isi sukunya, lalu batas bawah dan batas atas yang keduanya bilangan bulat."
+        },
+        {
+          "text": "Pada tampilan satu baris, ketiganya ditulis dengan koma: fungsinya, lalu batas-batasnya. Ketelitian boleh ditambahkan sebagai argumen terakhir integral."
+        },
+        {
+          "text": "Hitungan yang melewati lima detik dihentikan dengan pesan Time Out. Fungsi yang bergoyang sangat cepat memang sulit dihitung secara numerik."
+        }
+      ],
+      "examples": [
+        {
+          "goal": "Integral ln X dari 1 sampai e",
+          "press": "∫d▭ ln( ALPHA X ) ► 1 ► ALPHA e =",
+          "keys": "FN_INTEGRAL FN_LN MOD_ALPHA VAR_X PAREN_CLOSE NAV_RIGHT DIGIT_1 NAV_RIGHT MOD_ALPHA CONST_E EXEC_EQ",
+          "screen": "∫(ln(X),1,e)",
+          "result": "1",
+          "mode": "COMP",
+          "setup": "default"
+        },
+        {
+          "goal": "Integral X kuadrat dari 0 sampai 3",
+          "press": "∫d▭ ALPHA X x² ► 0 ► 3 =",
+          "keys": "FN_INTEGRAL MOD_ALPHA VAR_X POST_SQUARE NAV_RIGHT DIGIT_0 NAV_RIGHT DIGIT_3 EXEC_EQ",
+          "screen": "∫(X²,0,3)",
+          "result": "9",
+          "mode": "COMP",
+          "setup": "default"
+        },
+        {
+          "goal": "Integral satu per X dari 1 sampai 2",
+          "press": "∫d▭ 1 ▭/▭ ALPHA X ► ► 1 ► 2 =",
+          "keys": "FN_INTEGRAL DIGIT_1 FRAC MOD_ALPHA VAR_X NAV_RIGHT NAV_RIGHT DIGIT_1 NAV_RIGHT DIGIT_2 EXEC_EQ",
+          "screen": "∫(1⌟X,1,2)",
+          "result": "0.6931471806",
+          "mode": "COMP",
+          "setup": "default"
+        },
+        {
+          "goal": "Turunan X pangkat tiga di titik 2",
+          "press": "SHIFT d/dx ALPHA X SHIFT x³ ► 2 =",
+          "keys": "FN_DERIV MOD_ALPHA VAR_X POST_CUBE NAV_RIGHT DIGIT_2 EXEC_EQ",
+          "screen": "d/dx(X³,2)",
+          "result": "12",
+          "mode": "COMP",
+          "setup": "default"
+        },
+        {
+          "goal": "Penjumlahan beruntun X+1 dari 1 sampai 5",
+          "press": "SHIFT Σ( ALPHA X + 1 ► 1 ► 5 =",
+          "keys": "FN_SIGMA MOD_ALPHA VAR_X OP_ADD DIGIT_1 NAV_RIGHT DIGIT_1 NAV_RIGHT DIGIT_5 EXEC_EQ",
+          "screen": "Σ(X+1,1,5)",
+          "result": "20",
+          "mode": "COMP",
+          "setup": "default"
+        },
+        {
+          "goal": "Penjumlahan beruntun pecahan",
+          "press": "SHIFT Σ( 1 ▭/▭ ALPHA X ► ► 1 ► 4 =",
+          "keys": "FN_SIGMA DIGIT_1 FRAC MOD_ALPHA VAR_X NAV_RIGHT NAV_RIGHT DIGIT_1 NAV_RIGHT DIGIT_4 EXEC_EQ",
+          "screen": "Σ(1⌟X,1,4)",
+          "result": "25⌟12",
+          "mode": "COMP",
+          "setup": "default"
+        }
+      ]
+    },
+    {
+      "title": "Bilangan kompleks dan basis-N",
+      "steps": [
+        {
+          "keys": "MODE 2",
+          "text": "Masuk CMPLX. Tombol ENG pada lapis merah memberi satuan khayal i."
+        },
+        {
+          "keys": "SHIFT 2",
+          "text": "Menu CMPLX: sudut argumen, sekawan, ubah ke bentuk kutub, dan ubah ke bentuk a tambah bi. Dua yang terakhir adalah perintah yang ditulis di ujung ekspresi dan menimpa setelan."
+        },
+        {
+          "keys": "MODE 4",
+          "text": "Masuk BASE-N. Indikator basis yang aktif muncul di tepi atas."
+        },
+        {
+          "text": "Di BASE-N, tombol bertulisan biru langsung memilih basis: x kuadrat untuk desimal, x pangkat untuk heksadesimal, log untuk biner, ln untuk oktal."
+        },
+        {
+          "text": "Huruf A sampai F berlaku sebagai angka heksadesimal ketika basisnya heksadesimal. Operasi logika dan, atau, serta sebagainya tersedia lewat menu."
+        }
+      ],
+      "examples": [
+        {
+          "goal": "Membagi bilangan kompleks",
+          "press": "( 2 + 6 ALPHA i ) ÷ ( 2 ALPHA i ) =",
+          "keys": "PAREN_OPEN DIGIT_2 OP_ADD DIGIT_6 CONST_I PAREN_CLOSE OP_DIV PAREN_OPEN DIGIT_2 CONST_I PAREN_CLOSE EXEC_EQ",
+          "screen": "(2+6i)÷(2i)",
+          "result": "3-i",
+          "mode": "CMPLX",
+          "setup": "default"
+        },
+        {
+          "goal": "Sekawan bilangan kompleks",
+          "press": "SHIFT 2 2 2 + 3 ALPHA i ) =",
+          "keys": "FN_CONJG DIGIT_2 OP_ADD DIGIT_3 CONST_I PAREN_CLOSE EXEC_EQ",
+          "screen": "Conjg(2+3i)",
+          "result": "2-3i",
+          "mode": "CMPLX",
+          "setup": "default"
+        },
+        {
+          "goal": "Besar bilangan kompleks",
+          "press": "SHIFT Abs( 1 + ALPHA i ) =",
+          "keys": "FN_ABS DIGIT_1 OP_ADD CONST_I PAREN_CLOSE EXEC_EQ",
+          "screen": "Abs(1+i)",
+          "result": "√(2)",
+          "mode": "CMPLX",
+          "setup": "default"
+        },
+        {
+          "goal": "Sudut argumen bilangan kompleks",
+          "press": "SHIFT 2 1 1 + ALPHA i ) =",
+          "keys": "FN_ARG DIGIT_1 OP_ADD CONST_I PAREN_CLOSE EXEC_EQ",
+          "screen": "arg(1+i)",
+          "result": "45",
+          "mode": "CMPLX",
+          "setup": "default"
+        },
+        {
+          "goal": "Diubah ke bentuk kutub",
+          "press": "√▭ 2 ► + √▭ 2 ► ALPHA i SHIFT 2 3 =",
+          "keys": "FN_SQRT DIGIT_2 NAV_RIGHT OP_ADD FN_SQRT DIGIT_2 NAV_RIGHT CONST_I FN_TO_POLAR EXEC_EQ",
+          "screen": "√(2)+√(2)i▸r∠θ",
+          "result": "2∠45",
+          "mode": "CMPLX",
+          "setup": "default"
+        },
+        {
+          "goal": "Diubah kembali ke bentuk a+bi",
+          "press": "2 SHIFT ∠ 4 5 SHIFT 2 4 =",
+          "keys": "DIGIT_2 OP_ANGLE DIGIT_4 DIGIT_5 FN_TO_RECT EXEC_EQ",
+          "screen": "2∠45▸a+bi",
+          "result": "√(2)+√(2)i",
+          "mode": "CMPLX",
+          "setup": "default"
+        },
+        {
+          "goal": "Biner 1010 dibaca sebagai desimal",
+          "press": "BIN 1 0 1 0 = DEC",
+          "keys": "BASE_BIN DIGIT_1 DIGIT_0 DIGIT_1 DIGIT_0 EXEC_EQ BASE_DEC",
+          "screen": "1010",
+          "result": "10",
+          "mode": "BASE",
+          "setup": "default"
+        },
+        {
+          "goal": "Penjumlahan dalam heksadesimal",
+          "press": "HEX 1 ALPHA F + 1 =",
+          "keys": "BASE_HEX DIGIT_1 VAR_F OP_ADD DIGIT_1 EXEC_EQ",
+          "screen": "1F+1",
+          "result": "20",
+          "mode": "BASE",
+          "setup": "default"
+        },
+        {
+          "goal": "Operasi logika dan",
+          "press": "BIN 1 0 1 0 and 1 1 0 0 =",
+          "keys": "BASE_BIN DIGIT_1 DIGIT_0 DIGIT_1 DIGIT_0 FN_AND DIGIT_1 DIGIT_1 DIGIT_0 DIGIT_0 EXEC_EQ",
+          "screen": "1010 and 1100",
+          "result": "1000",
+          "mode": "BASE",
+          "setup": "default"
+        },
+        {
+          "goal": "Pembagian di BASE-N membuang sisanya",
+          "press": "DEC 7 ÷ 2 =",
+          "keys": "BASE_DEC DIGIT_7 OP_DIV DIGIT_2 EXEC_EQ",
+          "screen": "7÷2",
+          "result": "3",
+          "mode": "BASE",
+          "setup": "default"
+        }
+      ]
+    },
+    {
+      "title": "Persamaan",
+      "steps": [
+        {
+          "keys": "MODE 5",
+          "text": "Masuk EQN. Pilih jenisnya: dua peubah, tiga peubah, kuadrat, atau kubik."
+        },
+        {
+          "text": "Layar berikutnya adalah kisi koefisien bertajuk a, b, c. Isi tiap sel lalu tekan sama dengan untuk maju ke sel berikutnya."
+        },
+        {
+          "text": "Pada sel terakhir, sama dengan menyimpan isinya; tekan sama dengan sekali lagi untuk menghitung."
+        },
+        {
+          "text": "Akar ditampilkan satu per satu. Tekan sama dengan untuk melihat akar berikutnya, AC untuk kembali ke kisi koefisien."
+        },
+        {
+          "text": "AC di dalam kisi mengosongkan semua koefisien menjadi nol, bukan keluar dari mode."
+        },
+        {
+          "text": "Anda juga bisa menyentuh sel langsung untuk memindahkan kursor."
+        }
+      ],
+      "examples": [
+        {
+          "goal": "Sistem dua persamaan linear, akar X",
+          "press": "1 1 = 2 = 3 = 2 = 3 = 4 = =",
+          "keys": "DIGIT_1 DIGIT_1 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_3 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_3 EXEC_EQ DIGIT_4 EXEC_EQ EXEC_EQ",
+          "screen": "",
+          "result": "X=-1",
+          "mode": "EQN",
+          "setup": "default"
+        },
+        {
+          "goal": "Persamaan kubik, akar pertama",
+          "press": "4 1 = (−) 2 = (−) 1 = 2 = =",
+          "keys": "DIGIT_4 DIGIT_1 EXEC_EQ OP_NEG DIGIT_2 EXEC_EQ OP_NEG DIGIT_1 EXEC_EQ DIGIT_2 EXEC_EQ EXEC_EQ",
+          "screen": "",
+          "result": "X1=2",
+          "mode": "EQN",
+          "setup": "default"
+        },
+        {
+          "goal": "Persamaan kuadrat berakar 3 dan 2",
+          "press": "4 1 = (−) 6 = 1 1 = (−) 6 = =",
+          "keys": "DIGIT_4 DIGIT_1 EXEC_EQ OP_NEG DIGIT_6 EXEC_EQ DIGIT_1 DIGIT_1 EXEC_EQ OP_NEG DIGIT_6 EXEC_EQ EXEC_EQ",
+          "screen": "",
+          "result": "X1=3",
+          "mode": "EQN",
+          "setup": "default"
+        }
+      ]
+    },
+    {
+      "title": "Statistik dan tabel",
+      "steps": [
+        {
+          "keys": "MODE 3",
+          "text": "Masuk STAT lalu pilih modelnya. Butir pertama untuk satu peubah, sisanya untuk dua peubah dengan berbagai bentuk regresi."
+        },
+        {
+          "text": "Layar berikutnya adalah kisi data. Ketik angkanya lalu tekan sama dengan untuk menyimpan dan turun satu baris. DEL menghapus baris."
+        },
+        {
+          "keys": "SHIFT 1",
+          "text": "Menu STAT. Isinya berubah menurut layar yang sedang tampil: ada Edit selagi kisi data terbuka, ada Sum dan Var untuk memanggil jumlah dan simpangan, dan ada Reg untuk koefisien regresi."
+        },
+        {
+          "keys": "AC",
+          "text": "Dari kisi data, berpindah ke layar hitung. Dari sana Anda bisa memakai besaran statistik di tengah rumus biasa."
+        },
+        {
+          "text": "Kolom frekuensi bisa dinyalakan lewat SETUP bila data Anda berbentuk tabel frekuensi."
+        },
+        {
+          "keys": "MODE 7",
+          "text": "Masuk TABLE. Isi rumusnya, lalu nilai awal, nilai akhir, dan langkahnya. Lebih dari 30 baris akan ditolak dengan pesan memori tidak cukup."
+        }
+      ],
+      "examples": [
+        {
+          "goal": "Banyaknya data",
+          "press": "1 1 = 2 = 3 = 4 = 5 = AC SHIFT STAT 4 1",
+          "keys": "DIGIT_1 DIGIT_1 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_3 EXEC_EQ DIGIT_4 EXEC_EQ DIGIT_5 EXEC_EQ EDIT_AC MENU_STAT DIGIT_4 DIGIT_1",
+          "screen": "",
+          "result": "5",
+          "mode": "STAT",
+          "setup": "default"
+        },
+        {
+          "goal": "Jumlah seluruh data",
+          "press": "1 1 = 2 = 3 = 4 = 5 = AC SHIFT STAT 3 2",
+          "keys": "DIGIT_1 DIGIT_1 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_3 EXEC_EQ DIGIT_4 EXEC_EQ DIGIT_5 EXEC_EQ EDIT_AC MENU_STAT DIGIT_3 DIGIT_2",
+          "screen": "",
+          "result": "15",
+          "mode": "STAT",
+          "setup": "default"
+        },
+        {
+          "goal": "Rata-rata data",
+          "press": "1 1 = 2 = 3 = 4 = 5 = AC SHIFT STAT 4 2",
+          "keys": "DIGIT_1 DIGIT_1 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_3 EXEC_EQ DIGIT_4 EXEC_EQ DIGIT_5 EXEC_EQ EDIT_AC MENU_STAT DIGIT_4 DIGIT_2",
+          "screen": "",
+          "result": "3",
+          "mode": "STAT",
+          "setup": "default"
+        },
+        {
+          "goal": "Simpangan baku populasi",
+          "press": "1 1 = 2 = 3 = 4 = 5 = AC SHIFT STAT 4 3",
+          "keys": "DIGIT_1 DIGIT_1 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_3 EXEC_EQ DIGIT_4 EXEC_EQ DIGIT_5 EXEC_EQ EDIT_AC MENU_STAT DIGIT_4 DIGIT_3",
+          "screen": "",
+          "result": "1.414213562",
+          "mode": "STAT",
+          "setup": "default"
+        },
+        {
+          "goal": "Tabel nilai fungsi, baris pertama",
+          "press": "ALPHA X x² = 1 = 3 = 1 =",
+          "keys": "VAR_X POST_SQUARE EXEC_EQ DIGIT_1 EXEC_EQ DIGIT_3 EXEC_EQ DIGIT_1 EXEC_EQ",
+          "screen": "",
+          "result": "X=1  f(X)=1",
+          "mode": "TABLE",
+          "setup": "default"
+        },
+        {
+          "goal": "Tabel nilai fungsi, baris kedua",
+          "press": "ALPHA X x² = 1 = 3 = 1 = ▼",
+          "keys": "VAR_X POST_SQUARE EXEC_EQ DIGIT_1 EXEC_EQ DIGIT_3 EXEC_EQ DIGIT_1 EXEC_EQ NAV_DOWN",
+          "screen": "",
+          "result": "X=2  f(X)=4",
+          "mode": "TABLE",
+          "setup": "default"
+        },
+        {
+          "goal": "Memasukkan data 1 sampai 5 ke Statistics Editor",
+          "press": "1 1 = 2 = 3 = 4 = 5 =",
+          "keys": "DIGIT_1 DIGIT_1 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_3 EXEC_EQ DIGIT_4 EXEC_EQ DIGIT_5 EXEC_EQ",
+          "screen": "",
+          "result": "5",
+          "mode": "STAT",
+          "setup": "default"
+        },
+        {
+          "goal": "Regresi linear: mengisi pasangan X dan Y",
+          "press": "2 1 = 2 = 3 = ▼ ► 2 = 4 = 6 =",
+          "keys": "DIGIT_2 DIGIT_1 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_3 EXEC_EQ NAV_DOWN NAV_RIGHT DIGIT_2 EXEC_EQ DIGIT_4 EXEC_EQ DIGIT_6 EXEC_EQ",
+          "screen": "",
+          "result": "6",
+          "mode": "STAT",
+          "setup": "default"
+        }
+      ]
+    },
+    {
+      "title": "Matriks dan vektor",
+      "steps": [
+        {
+          "keys": "MODE 6",
+          "text": "Masuk MATRIX. Pilih Dim untuk menetapkan ukuran, lalu isi selnya satu per satu."
+        },
+        {
+          "text": "Tersedia tiga matriks: MatA, MatB, dan MatC. Hasil hitungan terakhir tersimpan sebagai MatAns."
+        },
+        {
+          "text": "Menu matriks juga menyediakan determinan dan transpos. Nilai mutlak bekerja pada tiap elemen."
+        },
+        {
+          "keys": "MODE 8",
+          "text": "Masuk VECTOR, dengan tiga vektor VctA, VctB, dan VctC serta hasil VctAns."
+        },
+        {
+          "text": "Hasil kali titik ada di menu. Hasil kali silang ditulis dengan tanda kali biasa; vektor dua komponen dinaikkan ke tiga dengan komponen ketiga nol."
+        },
+        {
+          "text": "Ukuran yang tidak cocok memberi pesan Dimension ERROR."
+        }
+      ],
+      "examples": [
+        {
+          "goal": "Determinan matriks dua kali dua",
+          "press": "1 5 1 = 2 = 3 = 4 = SHIFT MATRIX 7 SHIFT 4 3 ) =",
+          "keys": "DIGIT_1 DIGIT_5 DIGIT_1 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_3 EXEC_EQ DIGIT_4 EXEC_EQ MENU_MATRIX DIGIT_7 MAT_A PAREN_CLOSE EXEC_EQ",
+          "screen": "det(MatA)",
+          "result": "-2",
+          "mode": "MATRIX",
+          "setup": "default"
+        },
+        {
+          "goal": "Transpos matriks",
+          "press": "1 5 1 = 2 = 3 = 4 = SHIFT MATRIX 8 SHIFT 4 3 ) =",
+          "keys": "DIGIT_1 DIGIT_5 DIGIT_1 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_3 EXEC_EQ DIGIT_4 EXEC_EQ MENU_MATRIX DIGIT_8 MAT_A PAREN_CLOSE EXEC_EQ",
+          "screen": "Trn(MatA)",
+          "result": "[[1,3],[2,4]]",
+          "mode": "MATRIX",
+          "setup": "default"
+        },
+        {
+          "goal": "Matriks dikalikan dirinya sendiri",
+          "press": "1 5 1 = 2 = 3 = 4 = AC SHIFT 4 3 x² =",
+          "keys": "DIGIT_1 DIGIT_5 DIGIT_1 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_3 EXEC_EQ DIGIT_4 EXEC_EQ EDIT_AC MAT_A POST_SQUARE EXEC_EQ",
+          "screen": "MatA²",
+          "result": "[[7,10],[15,22]]",
+          "mode": "MATRIX",
+          "setup": "default"
+        },
+        {
+          "goal": "Invers matriks",
+          "press": "1 5 1 = 2 = 3 = 4 = AC SHIFT 4 3 x⁻¹ =",
+          "keys": "DIGIT_1 DIGIT_5 DIGIT_1 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_3 EXEC_EQ DIGIT_4 EXEC_EQ EDIT_AC MAT_A POST_RECIP EXEC_EQ",
+          "screen": "MatA^(-1)",
+          "result": "[[-2,1],[1.5,-0.5]]",
+          "mode": "MATRIX",
+          "setup": "default"
+        },
+        {
+          "goal": "Hasil kali titik dua vektor",
+          "press": "1 1 1 = 2 = 3 = AC SHIFT 5 3 SHIFT 5 7 SHIFT 5 3 =",
+          "keys": "DIGIT_1 DIGIT_1 DIGIT_1 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_3 EXEC_EQ EDIT_AC VCT_A FN_DOT VCT_A EXEC_EQ",
+          "screen": "VctA·VctA",
+          "result": "14",
+          "mode": "VECTOR",
+          "setup": "default"
+        },
+        {
+          "goal": "Panjang vektor",
+          "press": "1 2 3 = 4 = AC SHIFT Abs( SHIFT 5 3 ► =",
+          "keys": "DIGIT_1 DIGIT_2 DIGIT_3 EXEC_EQ DIGIT_4 EXEC_EQ EDIT_AC FN_ABS VCT_A NAV_RIGHT EXEC_EQ",
+          "screen": "Abs(VctA)",
+          "result": "5",
+          "mode": "VECTOR",
+          "setup": "default"
+        },
+        {
+          "goal": "Mengisi MatA dua kali dua lewat editor kisi",
+          "press": "1 5 1 = 2 = 3 = 4 =",
+          "keys": "DIGIT_1 DIGIT_5 DIGIT_1 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_3 EXEC_EQ DIGIT_4 EXEC_EQ",
+          "screen": "",
+          "result": "[[1,2],[3,4]]",
+          "mode": "MATRIX",
+          "setup": "default"
+        },
+        {
+          "goal": "Mengisi VctA tiga komponen",
+          "press": "1 1 1 = 2 = 3 =",
+          "keys": "DIGIT_1 DIGIT_1 DIGIT_1 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_3 EXEC_EQ",
+          "screen": "",
+          "result": "[1,2,3]",
+          "mode": "VECTOR",
+          "setup": "default"
+        },
+        {
+          "goal": "Matriks dikalikan bilangan",
+          "press": "1 5 1 = 2 = 3 = 4 = AC SHIFT 4 3 × 2 =",
+          "keys": "DIGIT_1 DIGIT_5 DIGIT_1 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_3 EXEC_EQ DIGIT_4 EXEC_EQ EDIT_AC MAT_A OP_MUL DIGIT_2 EXEC_EQ",
+          "screen": "MatA×2",
+          "result": "[[2,4],[6,8]]",
+          "mode": "MATRIX",
+          "setup": "default"
+        }
+      ]
+    },
+    {
+      "title": "Pesan kesalahan",
+      "intro": "Saat ada kesalahan, layar menampilkan pesannya di baris atas dan dua pilihan di bawahnya. AC membatalkan, sedangkan panah kiri atau kanan membawa kursor ke tempat kesalahannya.",
+      "steps": [
+        {
+          "text": "Syntax ERROR: susunan ketikannya tidak masuk akal, misalnya dua tanda operasi berturut-turut atau kurung kosong."
+        },
+        {
+          "text": "Math ERROR: hitungannya tidak terdefinisi atau hasilnya di luar jangkauan, misalnya pembagian dengan nol atau akar bilangan negatif."
+        },
+        {
+          "text": "Dimension ERROR: ukuran matriks atau vektor tidak cocok untuk operasi yang diminta."
+        },
+        {
+          "text": "Variable ERROR: SOLVE tidak menemukan peubah yang harus dicari dalam persamaannya."
+        },
+        {
+          "text": "Can not Solve: pencarian akar gagal. Coba tebakan awal yang lain."
+        },
+        {
+          "text": "Time Out: hitungan numerik melewati batas waktu."
+        },
+        {
+          "text": "Insufficient MEM: hasil yang diminta terlalu besar, misalnya tabel lebih dari 30 baris."
+        }
+      ],
+      "examples": [
+        {
+          "goal": "Pembagian dengan nol",
+          "press": "1 ÷ 0 =",
+          "keys": "DIGIT_1 OP_DIV DIGIT_0 EXEC_EQ",
+          "screen": "1÷0",
+          "result": "Math ERROR",
+          "mode": "COMP",
+          "setup": "default"
+        },
+        {
+          "goal": "Akar bilangan negatif",
+          "press": "√▭ (−) 1 ► =",
+          "keys": "FN_SQRT OP_NEG DIGIT_1 NAV_RIGHT EXEC_EQ",
+          "screen": "√(-1)",
+          "result": "Math ERROR",
+          "mode": "COMP",
+          "setup": "default"
+        },
+        {
+          "goal": "Operator tanpa bilangan di kanannya",
+          "press": "2 × =",
+          "keys": "DIGIT_2 OP_MUL EXEC_EQ",
+          "screen": "2×",
+          "result": "Syntax ERROR",
+          "mode": "COMP",
+          "setup": "default"
+        },
+        {
+          "goal": "Hasil melewati jangkauan kalkulator",
+          "press": "1 ×10^ 1 0 0 =",
+          "keys": "DIGIT_1 EXP10 DIGIT_1 DIGIT_0 DIGIT_0 EXEC_EQ",
+          "screen": "1E100",
+          "result": "Math ERROR",
+          "mode": "COMP",
+          "setup": "LineIO"
+        },
+        {
+          "goal": "Tabel melebihi 30 baris",
+          "press": "ALPHA X = 1 = 2 = 0 =",
+          "keys": "VAR_X EXEC_EQ DIGIT_1 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_0 EXEC_EQ",
+          "screen": "",
+          "result": "Math ERROR",
+          "mode": "TABLE",
+          "setup": "default"
+        },
+        {
+          "goal": "Ukuran matriks tidak cocok",
+          "press": "1 5 1 = 2 = 3 = 4 = AC SHIFT 4 3 × SHIFT 4 4 =",
+          "keys": "DIGIT_1 DIGIT_5 DIGIT_1 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_3 EXEC_EQ DIGIT_4 EXEC_EQ EDIT_AC MAT_A OP_MUL MAT_B EXEC_EQ",
+          "screen": "MatA×MatB",
+          "result": "Dimension ERROR",
+          "mode": "MATRIX",
+          "setup": "default"
+        }
+      ]
+    },
+    {
+      "title": "Tentang aplikasi ini",
+      "intro": "Altung dibuat N-Blu Studios sebagai kalkulator saintifik yang bekerja sepenuhnya tanpa jaringan. Aplikasi ini hanya meminta satu izin, yaitu menggetarkan ponsel.",
+      "steps": [
+        {
+          "keys": "OPTION 1",
+          "text": "Warna badan: Malam (biru tua), Kertas (krem), atau Hutan (hijau tua). Pilihannya ikut tersimpan."
+        },
+        {
+          "keys": "OPTION 2",
+          "text": "Getaran tombol. Bawaannya mati. Pada sebagian ponsel, sistemnya mengabaikan getaran dari aplikasi biasa."
+        },
+        {
+          "keys": "OPTION 3",
+          "text": "Panduan yang sedang Anda baca."
+        },
+        {
+          "keys": "OPTION 4",
+          "text": "Salin isi layar ke papan klip: hasilnya bila ada, selain itu baris ekspresi."
+        },
+        {
+          "keys": "OPTION 5",
+          "text": "Tempel teks dari papan klip ke baris ekspresi. Angka dari aplikasi lain dan teks yang tadi Anda salin dari sini sama-sama bisa. Teks yang tak terbaca ditolak seluruhnya, tidak ditempel separuh."
+        },
+        {
+          "keys": "OPTION 6",
+          "text": "Reset ke setelan pabrik: mode, setelan, tema, getaran, dan seluruh isi memori dikosongkan. Selalu ditanya Ya/Tidak lebih dulu. Berbeda dari CLR, Reset juga mengembalikan tema dan getaran."
+        },
+        {
+          "text": "Tekan lama baris hasil atau baris ekspresi juga membuka pilihan Salin dan Tempel, tanpa lewat menu OPTION."
+        },
+        {
+          "text": "Layar bisa disentuh: butir menu bernomor dapat langsung diketuk, begitu pula sel kisi data dan posisi kursor pada baris ekspresi, termasuk masuk ke dalam pembilang pecahan, pangkat, atau batas integral."
+        },
+        {
+          "text": "Tombol hidup-mati ditiadakan karena tidak berguna di ponsel, begitu pula pengatur kepekatan layar."
+        },
+        {
+          "text": "Isi terakhir layar, nilai variabel, dan setelan dipulihkan kembali saat aplikasi dibuka lagi."
+        }
+      ]
+    }
+  ]
+}

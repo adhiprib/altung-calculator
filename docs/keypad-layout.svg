@@ -1,0 +1,168 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="900" viewBox="0 0 420 900" font-family="Segoe UI, Arial, sans-serif">
+<rect width="420" height="900" rx="18" fill="#0B0E12"/>
+<rect x="14" y="14" width="392" height="210" rx="12" fill="#12161C" stroke="#2A323E"/>
+<text x="28" y="36" fill="#8A94A6" font-size="11">D  Math</text>
+<text x="28" y="109" fill="#E7ECF4" font-size="26" font-family="Consolas, monospace">2+3×4</text>
+<text x="392" y="194" fill="#E7ECF4" font-size="34" text-anchor="end" font-family="Consolas, monospace">14</text>
+<rect x="14.0" y="234.0" width="73.6" height="54.4" rx="9" fill="#1B4FA8" stroke="#2A323E"/>
+<text x="50.8" y="267.2" fill="#FFFFFF" font-size="11" text-anchor="middle">SHIFT</text>
+<rect x="93.6" y="234.0" width="73.6" height="54.4" rx="9" fill="#106B4C" stroke="#2A323E"/>
+<text x="130.4" y="267.2" fill="#FFFFFF" font-size="11" text-anchor="middle">ALPHA</text>
+<rect x="173.2" y="234.0" width="73.6" height="54.4" rx="9" fill="#161B22" stroke="#2A323E"/>
+<text x="178.2" y="246.0" fill="#7FB2FF" font-size="8">SETUP</text>
+<text x="210.0" y="267.2" fill="#C7D0DD" font-size="11" text-anchor="middle">MODE</text>
+<rect x="252.8" y="234.0" width="73.6" height="54.4" rx="9" fill="#161B22" stroke="#2A323E"/>
+<text x="257.8" y="246.0" fill="#7FB2FF" font-size="8">INS</text>
+<text x="289.6" y="267.2" fill="#C7D0DD" font-size="15" text-anchor="middle">DEL</text>
+<rect x="332.4" y="234.0" width="73.6" height="54.4" rx="9" fill="#5A1D1D" stroke="#2A323E"/>
+<text x="337.4" y="246.0" fill="#7FB2FF" font-size="8">OFF</text>
+<text x="369.2" y="267.2" fill="#FFD9D6" font-size="15" text-anchor="middle">AC</text>
+<rect x="14.0" y="294.4" width="73.6" height="54.4" rx="9" fill="#161B22" stroke="#2A323E"/>
+<text x="50.8" y="327.5" fill="#C7D0DD" font-size="15" text-anchor="middle">◄</text>
+<rect x="93.6" y="294.4" width="73.6" height="54.4" rx="9" fill="#161B22" stroke="#2A323E"/>
+<text x="130.4" y="327.5" fill="#C7D0DD" font-size="15" text-anchor="middle">▲</text>
+<rect x="173.2" y="294.4" width="73.6" height="54.4" rx="9" fill="#161B22" stroke="#2A323E"/>
+<text x="210.0" y="327.5" fill="#C7D0DD" font-size="15" text-anchor="middle">▼</text>
+<rect x="252.8" y="294.4" width="73.6" height="54.4" rx="9" fill="#161B22" stroke="#2A323E"/>
+<text x="289.6" y="327.5" fill="#C7D0DD" font-size="15" text-anchor="middle">►</text>
+<rect x="332.4" y="294.4" width="73.6" height="54.4" rx="9" fill="#161B22" stroke="#2A323E"/>
+<text x="369.2" y="327.5" fill="#C7D0DD" font-size="15" text-anchor="middle">ON</text>
+<rect x="14.0" y="354.7" width="73.6" height="54.4" rx="9" fill="#161B22" stroke="#2A323E"/>
+<text x="19.0" y="366.7" fill="#7FB2FF" font-size="8">SOLVE</text>
+<text x="82.6" y="366.7" fill="#64D2A8" font-size="8" text-anchor="end">=</text>
+<text x="50.8" y="387.9" fill="#C7D0DD" font-size="11" text-anchor="middle">CALC</text>
+<rect x="93.6" y="354.7" width="73.6" height="54.4" rx="9" fill="#161B22" stroke="#2A323E"/>
+<text x="98.6" y="366.7" fill="#7FB2FF" font-size="8">d/dx</text>
+<text x="130.4" y="387.9" fill="#C7D0DD" font-size="15" text-anchor="middle">∫d▭</text>
+<rect x="173.2" y="354.7" width="73.6" height="54.4" rx="9" fill="#161B22" stroke="#2A323E"/>
+<text x="178.2" y="366.7" fill="#7FB2FF" font-size="8">x!</text>
+<text x="210.0" y="387.9" fill="#C7D0DD" font-size="15" text-anchor="middle">x⁻¹</text>
+<rect x="252.8" y="354.7" width="73.6" height="54.4" rx="9" fill="#161B22" stroke="#2A323E"/>
+<text x="257.8" y="366.7" fill="#7FB2FF" font-size="8">Σ(</text>
+<text x="289.6" y="387.9" fill="#C7D0DD" font-size="9" text-anchor="middle">log▭(▭)</text>
+<rect x="332.4" y="354.7" width="73.6" height="54.4" rx="9" fill="#161B22" stroke="#2A323E"/>
+<text x="337.4" y="366.7" fill="#7FB2FF" font-size="8">Abs(</text>
+<text x="401.0" y="366.7" fill="#64D2A8" font-size="8" text-anchor="end">C</text>
+<text x="369.2" y="387.9" fill="#C7D0DD" font-size="15" text-anchor="middle">hyp</text>
+<rect x="14.0" y="415.1" width="73.6" height="54.4" rx="9" fill="#161B22" stroke="#2A323E"/>
+<text x="19.0" y="427.1" fill="#7FB2FF" font-size="8">▭▭/▭</text>
+<text x="50.8" y="448.3" fill="#C7D0DD" font-size="15" text-anchor="middle">▭/▭</text>
+<rect x="93.6" y="415.1" width="73.6" height="54.4" rx="9" fill="#161B22" stroke="#2A323E"/>
+<text x="98.6" y="427.1" fill="#7FB2FF" font-size="8">³√▭</text>
+<text x="130.4" y="448.3" fill="#C7D0DD" font-size="15" text-anchor="middle">√▭</text>
+<rect x="173.2" y="415.1" width="73.6" height="54.4" rx="9" fill="#161B22" stroke="#2A323E"/>
+<text x="178.2" y="427.1" fill="#7FB2FF" font-size="8">x³</text>
+<text x="210.0" y="448.3" fill="#C7D0DD" font-size="15" text-anchor="middle">x²</text>
+<rect x="252.8" y="415.1" width="73.6" height="54.4" rx="9" fill="#161B22" stroke="#2A323E"/>
+<text x="257.8" y="427.1" fill="#7FB2FF" font-size="8">▭√▭</text>
+<text x="289.6" y="448.3" fill="#C7D0DD" font-size="15" text-anchor="middle">x^▭</text>
+<rect x="332.4" y="415.1" width="73.6" height="54.4" rx="9" fill="#161B22" stroke="#2A323E"/>
+<text x="401.0" y="427.1" fill="#64D2A8" font-size="8" text-anchor="end">A</text>
+<text x="369.2" y="448.3" fill="#C7D0DD" font-size="15" text-anchor="middle">(−)</text>
+<rect x="14.0" y="475.5" width="73.6" height="54.4" rx="9" fill="#161B22" stroke="#2A323E"/>
+<text x="19.0" y="487.5" fill="#7FB2FF" font-size="8">10^</text>
+<text x="50.8" y="508.6" fill="#C7D0DD" font-size="11" text-anchor="middle">log(</text>
+<rect x="93.6" y="475.5" width="73.6" height="54.4" rx="9" fill="#161B22" stroke="#2A323E"/>
+<text x="98.6" y="487.5" fill="#7FB2FF" font-size="8">e^</text>
+<text x="130.4" y="508.6" fill="#C7D0DD" font-size="15" text-anchor="middle">ln(</text>
+<rect x="173.2" y="475.5" width="73.6" height="54.4" rx="9" fill="#161B22" stroke="#2A323E"/>
+<text x="178.2" y="487.5" fill="#7FB2FF" font-size="8">sin⁻¹(</text>
+<text x="241.8" y="487.5" fill="#64D2A8" font-size="8" text-anchor="end">D</text>
+<text x="210.0" y="508.6" fill="#C7D0DD" font-size="11" text-anchor="middle">sin(</text>
+<rect x="252.8" y="475.5" width="73.6" height="54.4" rx="9" fill="#161B22" stroke="#2A323E"/>
+<text x="257.8" y="487.5" fill="#7FB2FF" font-size="8">cos⁻¹(</text>
+<text x="321.4" y="487.5" fill="#64D2A8" font-size="8" text-anchor="end">E</text>
+<text x="289.6" y="508.6" fill="#C7D0DD" font-size="11" text-anchor="middle">cos(</text>
+<rect x="332.4" y="475.5" width="73.6" height="54.4" rx="9" fill="#161B22" stroke="#2A323E"/>
+<text x="337.4" y="487.5" fill="#7FB2FF" font-size="8">tan⁻¹(</text>
+<text x="401.0" y="487.5" fill="#64D2A8" font-size="8" text-anchor="end">F</text>
+<text x="369.2" y="508.6" fill="#C7D0DD" font-size="11" text-anchor="middle">tan(</text>
+<rect x="14.0" y="535.8" width="73.6" height="54.4" rx="9" fill="#161B22" stroke="#2A323E"/>
+<text x="19.0" y="547.8" fill="#7FB2FF" font-size="8">STO</text>
+<text x="50.8" y="569.0" fill="#C7D0DD" font-size="15" text-anchor="middle">RCL</text>
+<rect x="93.6" y="535.8" width="73.6" height="54.4" rx="9" fill="#161B22" stroke="#2A323E"/>
+<text x="98.6" y="547.8" fill="#7FB2FF" font-size="8">◄ENG</text>
+<text x="130.4" y="569.0" fill="#C7D0DD" font-size="15" text-anchor="middle">ENG</text>
+<rect x="173.2" y="535.8" width="73.6" height="54.4" rx="9" fill="#161B22" stroke="#2A323E"/>
+<text x="178.2" y="547.8" fill="#7FB2FF" font-size="8">%</text>
+<text x="210.0" y="569.0" fill="#C7D0DD" font-size="15" text-anchor="middle">(</text>
+<rect x="252.8" y="535.8" width="73.6" height="54.4" rx="9" fill="#161B22" stroke="#2A323E"/>
+<text x="257.8" y="547.8" fill="#7FB2FF" font-size="8">,</text>
+<text x="321.4" y="547.8" fill="#64D2A8" font-size="8" text-anchor="end">X</text>
+<text x="289.6" y="569.0" fill="#C7D0DD" font-size="15" text-anchor="middle">)</text>
+<rect x="332.4" y="535.8" width="73.6" height="54.4" rx="9" fill="#161B22" stroke="#2A323E"/>
+<text x="337.4" y="547.8" fill="#7FB2FF" font-size="8">◄°′″</text>
+<text x="401.0" y="547.8" fill="#64D2A8" font-size="8" text-anchor="end">B</text>
+<text x="369.2" y="569.0" fill="#C7D0DD" font-size="15" text-anchor="middle">°′″</text>
+<rect x="14.0" y="596.2" width="73.6" height="68.0" rx="9" fill="#1E2530" stroke="#2A323E"/>
+<text x="19.0" y="608.2" fill="#7FB2FF" font-size="8">CONST</text>
+<text x="82.6" y="608.2" fill="#64D2A8" font-size="8" text-anchor="end">:</text>
+<text x="50.8" y="636.2" fill="#E7ECF4" font-size="15" text-anchor="middle">7</text>
+<rect x="93.6" y="596.2" width="73.6" height="68.0" rx="9" fill="#1E2530" stroke="#2A323E"/>
+<text x="98.6" y="608.2" fill="#7FB2FF" font-size="8">CONV</text>
+<text x="162.2" y="608.2" fill="#64D2A8" font-size="8" text-anchor="end">⊢Disp</text>
+<text x="130.4" y="636.2" fill="#E7ECF4" font-size="15" text-anchor="middle">8</text>
+<rect x="173.2" y="596.2" width="73.6" height="68.0" rx="9" fill="#1E2530" stroke="#2A323E"/>
+<text x="178.2" y="608.2" fill="#7FB2FF" font-size="8">CLR</text>
+<text x="210.0" y="636.2" fill="#E7ECF4" font-size="15" text-anchor="middle">9</text>
+<rect x="252.8" y="596.2" width="73.6" height="68.0" rx="9" fill="#161B22" stroke="#2A323E"/>
+<text x="257.8" y="608.2" fill="#7FB2FF" font-size="8">a▭/▭ ⇔ d/</text>
+<text x="321.4" y="608.2" fill="#64D2A8" font-size="8" text-anchor="end">Y</text>
+<text x="289.6" y="636.2" fill="#C7D0DD" font-size="15" text-anchor="middle">S⇔D</text>
+<rect x="332.4" y="596.2" width="73.6" height="68.0" rx="9" fill="#161B22" stroke="#2A323E"/>
+<text x="337.4" y="608.2" fill="#7FB2FF" font-size="8">M−</text>
+<text x="401.0" y="608.2" fill="#64D2A8" font-size="8" text-anchor="end">M</text>
+<text x="369.2" y="636.2" fill="#C7D0DD" font-size="15" text-anchor="middle">M+</text>
+<rect x="14.0" y="670.1" width="73.6" height="68.0" rx="9" fill="#1E2530" stroke="#2A323E"/>
+<text x="19.0" y="682.1" fill="#7FB2FF" font-size="8">MATRIX</text>
+<text x="50.8" y="710.1" fill="#E7ECF4" font-size="15" text-anchor="middle">4</text>
+<rect x="93.6" y="670.1" width="73.6" height="68.0" rx="9" fill="#1E2530" stroke="#2A323E"/>
+<text x="98.6" y="682.1" fill="#7FB2FF" font-size="8">VECTOR</text>
+<text x="130.4" y="710.1" fill="#E7ECF4" font-size="15" text-anchor="middle">5</text>
+<rect x="173.2" y="670.1" width="73.6" height="68.0" rx="9" fill="#1E2530" stroke="#2A323E"/>
+<text x="178.2" y="682.1" fill="#7FB2FF" font-size="8">?</text>
+<text x="210.0" y="710.1" fill="#E7ECF4" font-size="15" text-anchor="middle">6</text>
+<rect x="252.8" y="670.1" width="73.6" height="68.0" rx="9" fill="#1E2530" stroke="#2A323E"/>
+<text x="257.8" y="682.1" fill="#7FB2FF" font-size="8">nPr</text>
+<text x="321.4" y="682.1" fill="#64D2A8" font-size="8" text-anchor="end">GCD(</text>
+<text x="289.6" y="710.1" fill="#E7ECF4" font-size="15" text-anchor="middle">×</text>
+<rect x="332.4" y="670.1" width="73.6" height="68.0" rx="9" fill="#1E2530" stroke="#2A323E"/>
+<text x="337.4" y="682.1" fill="#7FB2FF" font-size="8">nCr</text>
+<text x="401.0" y="682.1" fill="#64D2A8" font-size="8" text-anchor="end">LCM(</text>
+<text x="369.2" y="710.1" fill="#E7ECF4" font-size="15" text-anchor="middle">÷</text>
+<rect x="14.0" y="744.1" width="73.6" height="68.0" rx="9" fill="#1E2530" stroke="#2A323E"/>
+<text x="19.0" y="756.1" fill="#7FB2FF" font-size="8">STAT</text>
+<text x="50.8" y="784.1" fill="#E7ECF4" font-size="15" text-anchor="middle">1</text>
+<rect x="93.6" y="744.1" width="73.6" height="68.0" rx="9" fill="#1E2530" stroke="#2A323E"/>
+<text x="98.6" y="756.1" fill="#7FB2FF" font-size="8">CMPLX</text>
+<text x="130.4" y="784.1" fill="#E7ECF4" font-size="15" text-anchor="middle">2</text>
+<rect x="173.2" y="744.1" width="73.6" height="68.0" rx="9" fill="#1E2530" stroke="#2A323E"/>
+<text x="178.2" y="756.1" fill="#7FB2FF" font-size="8">BASE</text>
+<text x="210.0" y="784.1" fill="#E7ECF4" font-size="15" text-anchor="middle">3</text>
+<rect x="252.8" y="744.1" width="73.6" height="68.0" rx="9" fill="#1E2530" stroke="#2A323E"/>
+<text x="257.8" y="756.1" fill="#7FB2FF" font-size="8">Pol(</text>
+<text x="321.4" y="756.1" fill="#64D2A8" font-size="8" text-anchor="end">Int(</text>
+<text x="289.6" y="784.1" fill="#E7ECF4" font-size="15" text-anchor="middle">+</text>
+<rect x="332.4" y="744.1" width="73.6" height="68.0" rx="9" fill="#1E2530" stroke="#2A323E"/>
+<text x="337.4" y="756.1" fill="#7FB2FF" font-size="8">Rec(</text>
+<text x="401.0" y="756.1" fill="#64D2A8" font-size="8" text-anchor="end">Intg(</text>
+<text x="369.2" y="784.1" fill="#E7ECF4" font-size="15" text-anchor="middle">−</text>
+<rect x="14.0" y="818.0" width="73.6" height="68.0" rx="9" fill="#1E2530" stroke="#2A323E"/>
+<text x="19.0" y="830.0" fill="#7FB2FF" font-size="8">Rnd(</text>
+<text x="50.8" y="858.0" fill="#E7ECF4" font-size="15" text-anchor="middle">0</text>
+<rect x="93.6" y="818.0" width="73.6" height="68.0" rx="9" fill="#1E2530" stroke="#2A323E"/>
+<text x="98.6" y="830.0" fill="#7FB2FF" font-size="8">Ran#</text>
+<text x="162.2" y="830.0" fill="#64D2A8" font-size="8" text-anchor="end">RanInt#</text>
+<text x="130.4" y="858.0" fill="#E7ECF4" font-size="15" text-anchor="middle">.</text>
+<rect x="173.2" y="818.0" width="73.6" height="68.0" rx="9" fill="#1E2530" stroke="#2A323E"/>
+<text x="178.2" y="830.0" fill="#7FB2FF" font-size="8">π</text>
+<text x="241.8" y="830.0" fill="#64D2A8" font-size="8" text-anchor="end">e</text>
+<text x="210.0" y="858.0" fill="#E7ECF4" font-size="11" text-anchor="middle">×10^</text>
+<rect x="252.8" y="818.0" width="73.6" height="68.0" rx="9" fill="#1E2530" stroke="#2A323E"/>
+<text x="257.8" y="830.0" fill="#7FB2FF" font-size="8">DRG▸</text>
+<text x="321.4" y="830.0" fill="#64D2A8" font-size="8" text-anchor="end">PreAns</text>
+<text x="289.6" y="858.0" fill="#E7ECF4" font-size="15" text-anchor="middle">Ans</text>
+<rect x="332.4" y="818.0" width="73.6" height="68.0" rx="9" fill="#1B4FA8" stroke="#2A323E"/>
+<text x="337.4" y="830.0" fill="#7FB2FF" font-size="8">≈</text>
+<text x="369.2" y="858.0" fill="#FFFFFF" font-size="15" text-anchor="middle">=</text>
+</svg>

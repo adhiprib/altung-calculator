@@ -1,0 +1,751 @@
+{
+  "schema": 2,
+  "device": "fx-570ES PLUS",
+  "note": [
+    "Sumber tunggal pemetaan tombol untuk UI (:ui) dan tokenizer (:engine). PRD §4.2.",
+    "50 entri = 47 tombol fisik, dengan bantalan REPLAY dihitung sebagai 4 arah terpisah.",
+    "Isi lapis SHIFT, ALPHA, BASE-N, dan CMPLX dibaca dari foto unit fisik fx-570ES PLUS edisi kedua yang dikirim pemilik produk. Fungsi kedua edisi identik (PRD §1), hanya desain fisiknya yang berbeda.",
+    "Tata letak di layar mengikuti susunan tombol asli; lihat KeypadLayout di modul :ui.",
+    "Lapis CMPLX diselesaikan seperti unit fisik: ∠ berada di lapis SHIFT dan i di lapis ALPHA; warna kurung pada label yang menandai ketersediaannya di mode CMPLX.",
+    "Tombol ON diganti OPTION (pemilih warna badan) dan SHIFT+AC tidak lagi OFF: mematikan aplikasi bukan pekerjaan kalkulator di ponsel."
+  ],
+  "layers": [
+    "main",
+    "shift",
+    "alpha"
+  ],
+  "modeLayers": [
+    "baseN",
+    "cmplx"
+  ],
+  "keys": [
+    {
+      "id": "KEY_SHIFT",
+      "label": "SHIFT",
+      "group": "modifier",
+      "main": {
+        "token": "MOD_SHIFT",
+        "label": "SHIFT"
+      },
+      "shift": null,
+      "alpha": null
+    },
+    {
+      "id": "KEY_ALPHA",
+      "label": "ALPHA",
+      "group": "modifier",
+      "main": {
+        "token": "MOD_ALPHA",
+        "label": "ALPHA"
+      },
+      "shift": null,
+      "alpha": null
+    },
+    {
+      "id": "KEY_UP",
+      "label": "▲",
+      "group": "nav",
+      "main": {
+        "token": "NAV_UP",
+        "label": "▲"
+      },
+      "shift": null,
+      "alpha": null
+    },
+    {
+      "id": "KEY_LEFT",
+      "label": "◄",
+      "group": "nav",
+      "main": {
+        "token": "NAV_LEFT",
+        "label": "◄"
+      },
+      "shift": null,
+      "alpha": null
+    },
+    {
+      "id": "KEY_RIGHT",
+      "label": "►",
+      "group": "nav",
+      "main": {
+        "token": "NAV_RIGHT",
+        "label": "►"
+      },
+      "shift": null,
+      "alpha": null
+    },
+    {
+      "id": "KEY_DOWN",
+      "label": "▼",
+      "group": "nav",
+      "main": {
+        "token": "NAV_DOWN",
+        "label": "▼"
+      },
+      "shift": null,
+      "alpha": null
+    },
+    {
+      "id": "KEY_MODE",
+      "label": "MODE",
+      "group": "control",
+      "main": {
+        "token": "MENU_MODE",
+        "label": "MODE"
+      },
+      "shift": {
+        "token": "MENU_SETUP",
+        "label": "SETUP"
+      },
+      "alpha": null
+    },
+    {
+      "id": "KEY_ON",
+      "label": "OPTION",
+      "group": "control",
+      "main": {
+        "token": "MENU_OPTION",
+        "label": "OPTION"
+      },
+      "shift": null,
+      "alpha": null
+    },
+    {
+      "id": "KEY_CALC",
+      "label": "CALC",
+      "group": "scientific",
+      "main": {
+        "token": "FN_CALC",
+        "label": "CALC"
+      },
+      "shift": {
+        "token": "FN_SOLVE",
+        "label": "SOLVE"
+      },
+      "alpha": {
+        "token": "REL_EQ",
+        "label": "="
+      }
+    },
+    {
+      "id": "KEY_INTEGRAL",
+      "label": "∫d▭",
+      "group": "scientific",
+      "main": {
+        "token": "FN_INTEGRAL",
+        "label": "∫d▭"
+      },
+      "shift": {
+        "token": "FN_DERIV",
+        "label": "d/dx"
+      },
+      "alpha": {
+        "token": "SEP_COLON",
+        "label": ":"
+      }
+    },
+    {
+      "id": "KEY_RECIP",
+      "label": "x⁻¹",
+      "group": "scientific",
+      "main": {
+        "token": "POST_RECIP",
+        "label": "x⁻¹"
+      },
+      "shift": {
+        "token": "POST_FACT",
+        "label": "x!"
+      },
+      "alpha": null
+    },
+    {
+      "id": "KEY_LOGBASE",
+      "label": "log▭▭",
+      "group": "scientific",
+      "main": {
+        "token": "FN_LOGBASE",
+        "label": "log▭(▭)"
+      },
+      "shift": {
+        "token": "FN_SIGMA",
+        "label": "Σ("
+      },
+      "alpha": null
+    },
+    {
+      "id": "KEY_FRAC",
+      "label": "▭/▭",
+      "group": "scientific",
+      "main": {
+        "token": "FRAC",
+        "label": "▭/▭"
+      },
+      "shift": {
+        "token": "FRAC_MIXED",
+        "label": "▭▭/▭"
+      },
+      "alpha": null
+    },
+    {
+      "id": "KEY_SQRT",
+      "label": "√▭",
+      "group": "scientific",
+      "main": {
+        "token": "FN_SQRT",
+        "label": "√▭"
+      },
+      "shift": {
+        "token": "FN_CBRT",
+        "label": "³√▭"
+      },
+      "alpha": null
+    },
+    {
+      "id": "KEY_SQUARE",
+      "label": "x²",
+      "group": "scientific",
+      "main": {
+        "token": "POST_SQUARE",
+        "label": "x²"
+      },
+      "shift": {
+        "token": "POST_CUBE",
+        "label": "x³"
+      },
+      "alpha": null,
+      "baseN": {
+        "token": "BASE_DEC",
+        "label": "DEC"
+      }
+    },
+    {
+      "id": "KEY_POWER",
+      "label": "x▭",
+      "group": "scientific",
+      "main": {
+        "token": "OP_POW",
+        "label": "x^▭"
+      },
+      "shift": {
+        "token": "OP_NROOT",
+        "label": "▭√▭"
+      },
+      "alpha": null,
+      "baseN": {
+        "token": "BASE_HEX",
+        "label": "HEX"
+      }
+    },
+    {
+      "id": "KEY_LOG",
+      "label": "log",
+      "group": "scientific",
+      "main": {
+        "token": "FN_LOG",
+        "label": "log("
+      },
+      "shift": {
+        "token": "FN_POW10",
+        "label": "10^"
+      },
+      "alpha": null,
+      "baseN": {
+        "token": "BASE_BIN",
+        "label": "BIN"
+      }
+    },
+    {
+      "id": "KEY_LN",
+      "label": "ln",
+      "group": "scientific",
+      "main": {
+        "token": "FN_LN",
+        "label": "ln("
+      },
+      "shift": {
+        "token": "FN_EXP",
+        "label": "e^"
+      },
+      "alpha": null,
+      "baseN": {
+        "token": "BASE_OCT",
+        "label": "OCT"
+      }
+    },
+    {
+      "id": "KEY_NEG",
+      "label": "(−)",
+      "group": "scientific",
+      "main": {
+        "token": "OP_NEG",
+        "label": "(−)"
+      },
+      "shift": {
+        "token": "OP_ANGLE",
+        "label": "∠"
+      },
+      "alpha": {
+        "token": "VAR_A",
+        "label": "A"
+      }
+    },
+    {
+      "id": "KEY_DMS",
+      "label": "°′″",
+      "group": "scientific",
+      "main": {
+        "token": "POST_DMS",
+        "label": "°′″"
+      },
+      "shift": {
+        "token": "FN_DMS_BACK",
+        "label": "←"
+      },
+      "alpha": {
+        "token": "VAR_B",
+        "label": "B"
+      }
+    },
+    {
+      "id": "KEY_HYP",
+      "label": "hyp",
+      "group": "scientific",
+      "main": {
+        "token": "MENU_HYP",
+        "label": "hyp"
+      },
+      "shift": {
+        "token": "FN_ABS",
+        "label": "Abs("
+      },
+      "alpha": {
+        "token": "VAR_C",
+        "label": "C"
+      }
+    },
+    {
+      "id": "KEY_SIN",
+      "label": "sin",
+      "group": "scientific",
+      "main": {
+        "token": "FN_SIN",
+        "label": "sin("
+      },
+      "shift": {
+        "token": "FN_ASIN",
+        "label": "sin⁻¹("
+      },
+      "alpha": {
+        "token": "VAR_D",
+        "label": "D"
+      }
+    },
+    {
+      "id": "KEY_COS",
+      "label": "cos",
+      "group": "scientific",
+      "main": {
+        "token": "FN_COS",
+        "label": "cos("
+      },
+      "shift": {
+        "token": "FN_ACOS",
+        "label": "cos⁻¹("
+      },
+      "alpha": {
+        "token": "VAR_E",
+        "label": "E"
+      }
+    },
+    {
+      "id": "KEY_TAN",
+      "label": "tan",
+      "group": "scientific",
+      "main": {
+        "token": "FN_TAN",
+        "label": "tan("
+      },
+      "shift": {
+        "token": "FN_ATAN",
+        "label": "tan⁻¹("
+      },
+      "alpha": {
+        "token": "VAR_F",
+        "label": "F"
+      }
+    },
+    {
+      "id": "KEY_RCL",
+      "label": "RCL",
+      "group": "memory",
+      "main": {
+        "token": "MEM_RCL",
+        "label": "RCL"
+      },
+      "shift": {
+        "token": "MEM_STO",
+        "label": "STO"
+      },
+      "alpha": null
+    },
+    {
+      "id": "KEY_ENG",
+      "label": "ENG",
+      "group": "memory",
+      "main": {
+        "token": "FMT_ENG",
+        "label": "ENG"
+      },
+      "shift": {
+        "token": "FMT_ENG_BACK",
+        "label": "←"
+      },
+      "alpha": {
+        "token": "CONST_I",
+        "label": "i"
+      }
+    },
+    {
+      "id": "KEY_LPAREN",
+      "label": "(",
+      "group": "memory",
+      "main": {
+        "token": "PAREN_OPEN",
+        "label": "("
+      },
+      "shift": {
+        "token": "POST_PERCENT",
+        "label": "%"
+      },
+      "alpha": null
+    },
+    {
+      "id": "KEY_RPAREN",
+      "label": ")",
+      "group": "memory",
+      "main": {
+        "token": "PAREN_CLOSE",
+        "label": ")"
+      },
+      "shift": {
+        "token": "SEP_COMMA",
+        "label": ","
+      },
+      "alpha": {
+        "token": "VAR_X",
+        "label": "X"
+      }
+    },
+    {
+      "id": "KEY_SD",
+      "label": "S⇔D",
+      "group": "memory",
+      "main": {
+        "token": "FMT_SD",
+        "label": "S⇔D"
+      },
+      "shift": {
+        "token": "FMT_ABC_DC",
+        "label": "ab/c⇔d/c"
+      },
+      "alpha": {
+        "token": "VAR_Y",
+        "label": "Y"
+      }
+    },
+    {
+      "id": "KEY_MPLUS",
+      "label": "M+",
+      "group": "memory",
+      "main": {
+        "token": "MEM_MPLUS",
+        "label": "M+"
+      },
+      "shift": {
+        "token": "MEM_MMINUS",
+        "label": "M−"
+      },
+      "alpha": {
+        "token": "VAR_M",
+        "label": "M"
+      }
+    },
+    {
+      "id": "KEY_7",
+      "label": "7",
+      "group": "digit",
+      "main": {
+        "token": "DIGIT_7",
+        "label": "7"
+      },
+      "shift": {
+        "token": "MENU_CONST",
+        "label": "CONST"
+      },
+      "alpha": null
+    },
+    {
+      "id": "KEY_8",
+      "label": "8",
+      "group": "digit",
+      "main": {
+        "token": "DIGIT_8",
+        "label": "8"
+      },
+      "shift": {
+        "token": "MENU_CONV",
+        "label": "CONV"
+      },
+      "alpha": null
+    },
+    {
+      "id": "KEY_9",
+      "label": "9",
+      "group": "digit",
+      "main": {
+        "token": "DIGIT_9",
+        "label": "9"
+      },
+      "shift": {
+        "token": "MENU_CLR",
+        "label": "CLR"
+      },
+      "alpha": null
+    },
+    {
+      "id": "KEY_DEL",
+      "label": "DEL",
+      "group": "control",
+      "main": {
+        "token": "EDIT_DEL",
+        "label": "DEL"
+      },
+      "shift": {
+        "token": "EDIT_INS",
+        "label": "INS"
+      },
+      "alpha": null
+    },
+    {
+      "id": "KEY_AC",
+      "label": "AC",
+      "group": "control",
+      "main": {
+        "token": "EDIT_AC",
+        "label": "AC"
+      },
+      "shift": null,
+      "alpha": null
+    },
+    {
+      "id": "KEY_4",
+      "label": "4",
+      "group": "digit",
+      "main": {
+        "token": "DIGIT_4",
+        "label": "4"
+      },
+      "shift": {
+        "token": "MENU_MATRIX",
+        "label": "MATRIX"
+      },
+      "alpha": null
+    },
+    {
+      "id": "KEY_5",
+      "label": "5",
+      "group": "digit",
+      "main": {
+        "token": "DIGIT_5",
+        "label": "5"
+      },
+      "shift": {
+        "token": "MENU_VECTOR",
+        "label": "VECTOR"
+      },
+      "alpha": null
+    },
+    {
+      "id": "KEY_6",
+      "label": "6",
+      "group": "digit",
+      "main": {
+        "token": "DIGIT_6",
+        "label": "6"
+      },
+      "shift": null,
+      "alpha": null
+    },
+    {
+      "id": "KEY_MUL",
+      "label": "×",
+      "group": "operator",
+      "main": {
+        "token": "OP_MUL",
+        "label": "×"
+      },
+      "shift": {
+        "token": "OP_NPR",
+        "label": "nPr"
+      },
+      "alpha": null
+    },
+    {
+      "id": "KEY_DIV",
+      "label": "÷",
+      "group": "operator",
+      "main": {
+        "token": "OP_DIV",
+        "label": "÷"
+      },
+      "shift": {
+        "token": "OP_NCR",
+        "label": "nCr"
+      },
+      "alpha": null
+    },
+    {
+      "id": "KEY_1",
+      "label": "1",
+      "group": "digit",
+      "main": {
+        "token": "DIGIT_1",
+        "label": "1"
+      },
+      "shift": {
+        "token": "MENU_STAT",
+        "label": "STAT"
+      },
+      "alpha": null
+    },
+    {
+      "id": "KEY_2",
+      "label": "2",
+      "group": "digit",
+      "main": {
+        "token": "DIGIT_2",
+        "label": "2"
+      },
+      "shift": {
+        "token": "MENU_CMPLX",
+        "label": "CMPLX"
+      },
+      "alpha": null
+    },
+    {
+      "id": "KEY_3",
+      "label": "3",
+      "group": "digit",
+      "main": {
+        "token": "DIGIT_3",
+        "label": "3"
+      },
+      "shift": {
+        "token": "MENU_BASE",
+        "label": "BASE"
+      },
+      "alpha": null
+    },
+    {
+      "id": "KEY_ADD",
+      "label": "+",
+      "group": "operator",
+      "main": {
+        "token": "OP_ADD",
+        "label": "+"
+      },
+      "shift": {
+        "token": "FN_POL",
+        "label": "Pol("
+      },
+      "alpha": null
+    },
+    {
+      "id": "KEY_SUB",
+      "label": "−",
+      "group": "operator",
+      "main": {
+        "token": "OP_SUB",
+        "label": "−"
+      },
+      "shift": {
+        "token": "FN_REC",
+        "label": "Rec("
+      },
+      "alpha": null
+    },
+    {
+      "id": "KEY_0",
+      "label": "0",
+      "group": "digit",
+      "main": {
+        "token": "DIGIT_0",
+        "label": "0"
+      },
+      "shift": {
+        "token": "FN_RND",
+        "label": "Rnd("
+      },
+      "alpha": null
+    },
+    {
+      "id": "KEY_DOT",
+      "label": ".",
+      "group": "digit",
+      "main": {
+        "token": "DOT",
+        "label": "."
+      },
+      "shift": {
+        "token": "FN_RAN",
+        "label": "Ran#"
+      },
+      "alpha": {
+        "token": "FN_RANINT",
+        "label": "RanInt#("
+      }
+    },
+    {
+      "id": "KEY_EXP",
+      "label": "×10ˣ",
+      "group": "digit",
+      "main": {
+        "token": "EXP10",
+        "label": "×10^"
+      },
+      "shift": {
+        "token": "CONST_PI",
+        "label": "π"
+      },
+      "alpha": {
+        "token": "CONST_E",
+        "label": "e"
+      }
+    },
+    {
+      "id": "KEY_ANS",
+      "label": "Ans",
+      "group": "operator",
+      "main": {
+        "token": "MEM_ANS",
+        "label": "Ans"
+      },
+      "shift": {
+        "token": "MENU_DRG",
+        "label": "DRG▸"
+      },
+      "alpha": null
+    },
+    {
+      "id": "KEY_EQ",
+      "label": "=",
+      "group": "operator",
+      "main": {
+        "token": "EXEC_EQ",
+        "label": "="
+      },
+      "shift": null,
+      "alpha": null
+    }
+  ]
+}

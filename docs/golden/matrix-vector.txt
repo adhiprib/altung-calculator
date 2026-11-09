@@ -1,0 +1,40 @@
+# ============================================================================
+# STATUS: BELUM DIVERIFIKASI UNIT FISIK
+# Kasus mode MATRIX dan VECTOR (PRD §8 Tahap 6). Semua bersumber `manual?`:
+# nilainya saya turunkan analitis, bukan disalin dari contoh manual.
+#
+# Alur: masuk mode MATRIX langsung membuka pemilihan nama (1:MatA 2:MatB 3:MatC), lalu menu
+# ukuran (1:3x3 2:3x2 3:3x1 4:2x3 5:2x2 6:2x1 7:1x3 8:1x2 9:1x1) seperti manual hlm. 63.
+# Sesudah itu Matrix Editor terbuka berisi nol; tiap `=` menyimpan sel dan pindah ke sel
+# berikutnya. Mode VECTOR sama, menu ukurannya 1:3 2:2.
+# MENU_MATRIX membuka menu 1:Dim 2:Data 3:MatA 4:MatB 5:MatC 6:MatAns 7:det 8:Trn.
+# MENU_VECTOR membuka menu 1:Dim 2:Data 3:VctA 4:VctB 5:VctC 6:VctAns 7:Dot.
+# Nomor menu ini milik saya dan wajib diverifikasi ke unit fisik.
+#
+# Hasil matriks ditulis sebagai [[a,b],[c,d]] dan vektor sebagai [a,b,c];
+# kalkulator fisik menampilkannya satu elemen per layar dengan kursor.
+# Format lengkap: docs/golden/README.md
+# ============================================================================
+# mode | setup | urutan tombol | tampilan ekspresi | tampilan hasil | sumber
+
+# --- MatA = [[1,2],[3,4]] ---
+MATRIX | default | DIGIT_1 DIGIT_5 DIGIT_1 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_3 EXEC_EQ DIGIT_4 EXEC_EQ |  | [[1,2],[3,4]] | manual?
+MATRIX | default | DIGIT_1 DIGIT_5 DIGIT_1 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_3 EXEC_EQ DIGIT_4 EXEC_EQ MENU_MATRIX DIGIT_7 MAT_A PAREN_CLOSE EXEC_EQ | det(MatA) | -2 | manual?
+MATRIX | default | DIGIT_1 DIGIT_5 DIGIT_1 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_3 EXEC_EQ DIGIT_4 EXEC_EQ MENU_MATRIX DIGIT_8 MAT_A PAREN_CLOSE EXEC_EQ | Trn(MatA) | [[1,3],[2,4]] | manual?
+MATRIX | default | DIGIT_1 DIGIT_5 DIGIT_1 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_3 EXEC_EQ DIGIT_4 EXEC_EQ EDIT_AC MAT_A OP_MUL DIGIT_2 EXEC_EQ | MatA×2 | [[2,4],[6,8]] | manual?
+MATRIX | default | DIGIT_1 DIGIT_5 DIGIT_1 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_3 EXEC_EQ DIGIT_4 EXEC_EQ EDIT_AC MAT_A POST_SQUARE EXEC_EQ | MatA² | [[7,10],[15,22]] | manual?
+MATRIX | default | DIGIT_1 DIGIT_5 DIGIT_1 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_3 EXEC_EQ DIGIT_4 EXEC_EQ EDIT_AC MAT_A POST_RECIP EXEC_EQ | MatA^(-1) | [[-2,1],[1.5,-0.5]] | manual?
+MATRIX | default | DIGIT_1 DIGIT_5 DIGIT_1 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_3 EXEC_EQ DIGIT_4 EXEC_EQ EDIT_AC MAT_A OP_ADD MAT_A EXEC_EQ | MatA+MatA | [[2,4],[6,8]] | manual?
+MATRIX | default | DIGIT_1 DIGIT_5 DIGIT_1 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_3 EXEC_EQ DIGIT_4 EXEC_EQ EDIT_AC MAT_A OP_MUL MAT_B EXEC_EQ | MatA×MatB | Dimension ERROR | manual?
+
+# --- MatA singular: det 0, invers Math ERROR ---
+MATRIX | default | DIGIT_1 DIGIT_5 DIGIT_1 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_4 EXEC_EQ MENU_MATRIX DIGIT_7 MAT_A PAREN_CLOSE EXEC_EQ | det(MatA) | 0 | manual?
+MATRIX | default | DIGIT_1 DIGIT_5 DIGIT_1 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_4 EXEC_EQ EDIT_AC MAT_A POST_RECIP EXEC_EQ | MatA^(-1) | Math ERROR | manual?
+
+# --- VctA = [1,2,3] ---
+VECTOR | default | DIGIT_1 DIGIT_1 DIGIT_1 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_3 EXEC_EQ |  | [1,2,3] | manual?
+VECTOR | default | DIGIT_1 DIGIT_1 DIGIT_1 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_3 EXEC_EQ EDIT_AC VCT_A OP_ADD VCT_A EXEC_EQ | VctA+VctA | [2,4,6] | manual?
+VECTOR | default | DIGIT_1 DIGIT_1 DIGIT_1 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_3 EXEC_EQ EDIT_AC VCT_A FN_DOT VCT_A EXEC_EQ | VctA·VctA | 14 | manual?
+VECTOR | default | DIGIT_1 DIGIT_1 DIGIT_1 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_3 EXEC_EQ EDIT_AC VCT_A OP_MUL VCT_A EXEC_EQ | VctA×VctA | [0,0,0] | manual?
+VECTOR | default | DIGIT_1 DIGIT_2 DIGIT_3 EXEC_EQ DIGIT_4 EXEC_EQ EDIT_AC FN_ABS VCT_A NAV_RIGHT EXEC_EQ | Abs(VctA) | 5 | manual?
+VECTOR | default | DIGIT_1 DIGIT_1 DIGIT_1 EXEC_EQ DIGIT_2 EXEC_EQ DIGIT_3 EXEC_EQ EDIT_AC VCT_A OP_ADD VCT_B EXEC_EQ | VctA+VctB | Dimension ERROR | manual?
